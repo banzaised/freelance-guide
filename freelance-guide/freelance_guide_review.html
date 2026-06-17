@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Panji"><title>Review — Freelance Guide</title><style>
+:root{
+  --bg:#0e0f1c; --surface:#171a2e; --surface2:#1f2340; --line:#2b2f55;
+  --text:#e9e9f4; --muted:#9aa0c4; --indigo:#8b7cff; --indigo-dim:#6f60e6;
+  --mint:#37d99a; --coral:#ff6b6b; --amber:#fbbf24;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{background:var(--bg);}
+body{color:var(--text);font-family:var(--sans);line-height:1.55;
+  background:radial-gradient(1200px 600px at 100% -10%, rgba(139,124,255,.10), transparent 60%),var(--bg);
+  -webkit-font-smoothing:antialiased;}
+a{color:var(--indigo);text-decoration:none;}
+code{font-family:var(--mono);background:#0b0c18;border:1px solid var(--line);
+  padding:1px 6px;border-radius:6px;font-size:.92em;color:#cdd0ff;}
+
+/* top ribbon */
+.ribbon{display:flex;justify-content:space-between;align-items:center;
+  padding:10px 16px;border-bottom:1px solid var(--line);background:rgba(13,14,28,.7);
+  backdrop-filter:saturate(140%) blur(6px);position:sticky;top:0;z-index:20;}
+.brand{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--indigo);text-transform:uppercase;}
+.byline{font-size:12px;color:var(--muted);}
+.byline b{color:var(--amber);font-weight:600;}
+
+/* nav */
+.nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;border-bottom:1px solid var(--line);
+  background:var(--surface);scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{flex:0 0 auto;font-size:13px;color:var(--muted);padding:7px 12px;border-radius:999px;
+  border:1px solid transparent;white-space:nowrap;}
+.nav a:hover{color:var(--text);}
+.nav a.here{color:var(--text);background:var(--surface2);border-color:var(--line);}
+
+.wrap{max-width:740px;margin:0 auto;padding:26px 18px 64px;}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--indigo);margin-bottom:10px;}
+h1{font-size:34px;line-height:1.08;letter-spacing:-.02em;font-weight:800;margin-bottom:10px;}
+h2{font-size:20px;letter-spacing:-.01em;margin:30px 0 12px;}
+.lede{color:var(--muted);font-size:16px;max-width:60ch;}
+
+/* timeline */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:18px;}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;}
+.chip .t{font-weight:700;font-size:14px;}
+.chip .d{color:var(--muted);font-size:12px;margin-top:2px;font-family:var(--mono);}
+
+/* resource list */
+.res{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:14px 15px;margin-top:10px;transition:transform .12s ease,border-color .12s ease;}
+.res:hover{transform:translateY(-2px);border-color:var(--indigo-dim);}
+.res .name{font-weight:700;color:var(--text);}
+.res .meta{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0;}
+.tag{font-size:11px;font-family:var(--mono);padding:2px 8px;border-radius:999px;
+  background:rgba(139,124,255,.14);color:#c3bcff;border:1px solid rgba(139,124,255,.25);}
+.tag.alt{background:#16182b;color:var(--muted);border-color:var(--line);}
+.res .desc{color:var(--muted);font-size:14px;}
+
+/* cards on home */
+.cards{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px;}
+.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 17px;
+  transition:transform .12s ease,border-color .12s ease;}
+.card:hover{transform:translateY(-2px);border-color:var(--indigo-dim);}
+.card .k{font-family:var(--mono);font-size:12px;color:var(--indigo);}
+.card .h{font-weight:800;font-size:18px;margin:4px 0 4px;color:var(--text);}
+.card .p{color:var(--muted);font-size:14px;}
+
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+.btn{display:inline-block;background:var(--indigo-dim);color:#fff;font-weight:700;font-size:15px;
+  padding:12px 18px;border-radius:12px;border:none;cursor:pointer;transition:filter .12s ease,transform .08s ease;}
+.btn:hover{filter:brightness(1.08);}
+.btn:active{transform:translateY(1px);}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text);}
+
+/* quiz */
+.quizhead{display:flex;justify-content:space-between;align-items:baseline;margin:28px 0 4px;}
+.quizhead .cnt{font-family:var(--mono);font-size:13px;color:var(--mint);}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;margin-top:14px;}
+.qnum{font-family:var(--mono);font-size:12px;color:var(--indigo);letter-spacing:.08em;text-transform:uppercase;}
+.qtext{font-size:16px;font-weight:600;margin:6px 0 12px;}
+.qrow{display:flex;gap:9px;}
+.qinput{flex:1;background:#0b0c18;border:1px solid var(--line);color:var(--text);border-radius:11px;
+  padding:11px 13px;font-size:15px;font-family:var(--mono);outline:none;transition:border-color .12s,box-shadow .12s;}
+.qinput::placeholder{color:#5b6090;}
+.qinput:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(139,124,255,.18);}
+.qinput.ok{border-color:var(--mint);}
+.qinput.bad{border-color:var(--coral);animation:shake .35s;}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.qbtn{background:var(--indigo-dim);color:#fff;border:none;border-radius:11px;padding:0 16px;font-weight:700;cursor:pointer;font-size:14px;}
+.qbtn:disabled{opacity:.5;cursor:default;}
+.pips{display:flex;align-items:center;gap:7px;margin-top:11px;}
+.pip{width:9px;height:9px;border-radius:50%;background:#2a2e52;display:inline-block;}
+.pip.miss{background:var(--coral);}
+.pipcount{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:4px;}
+.qfb{display:none;margin-top:12px;border-radius:11px;padding:11px 13px;font-size:14px;border:1px solid var(--line);}
+.qfb.show{display:block;}
+.qfb.ok{background:rgba(55,217,154,.08);border-color:rgba(55,217,154,.3);}
+.qfb.bad{background:rgba(255,107,107,.08);border-color:rgba(255,107,107,.3);}
+.qfb.reveal{background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.32);}
+.fbhead{font-weight:700;margin-bottom:4px;}
+.qfb.ok .fbhead{color:var(--mint);}
+.qfb.reveal .fbhead{color:var(--amber);}
+.fbbody{color:var(--muted);}
+.fblink{display:inline-block;margin-top:8px;font-weight:600;}
+
+/* forms */
+.field{margin-top:14px;}
+.field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px;font-weight:600;}
+.inp,.sel,.ta{width:100%;background:#0b0c18;border:1px solid var(--line);color:var(--text);
+  border-radius:11px;padding:12px 13px;font-size:15px;font-family:var(--sans);outline:none;transition:border-color .12s,box-shadow .12s;}
+.inp:focus,.sel:focus,.ta:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(139,124,255,.18);}
+.ta{min-height:110px;resize:vertical;}
+.phone{display:flex;gap:9px;}
+.phone .sel{flex:0 0 130px;}
+.hide{position:absolute;left:-9999px;opacity:0;height:0;width:0;}
+.stars{display:flex;gap:6px;font-size:30px;cursor:pointer;user-select:none;}
+.star{color:#3a3f6b;transition:color .1s,transform .08s;}
+.star.on{color:var(--amber);}
+.star:active{transform:scale(1.15);}
+.note{font-size:12px;color:var(--muted);margin-top:8px;}
+.msg{display:none;margin-top:14px;border-radius:11px;padding:12px 14px;font-size:14px;border:1px solid var(--line);}
+.msg.show{display:block;}
+.msg.good{background:rgba(55,217,154,.09);border-color:rgba(55,217,154,.32);color:#bff3dd;}
+.msg.err{background:rgba(255,107,107,.09);border-color:rgba(255,107,107,.32);color:#ffd0d0;}
+
+/* page nav */
+.pager{display:flex;justify-content:space-between;gap:10px;margin-top:34px;padding-top:18px;border-top:1px solid var(--line);}
+.pager a{font-size:14px;color:var(--text);background:var(--surface);border:1px solid var(--line);
+  border-radius:11px;padding:10px 14px;}
+.pager .lab{display:block;font-size:11px;color:var(--muted);font-family:var(--mono);}
+.foot{margin-top:30px;color:#6a6f98;font-size:12px;text-align:center;}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important;}
+}
+@media (max-width:480px){ h1{font-size:28px;} .phone .sel{flex:0 0 116px;} }
+</style></head><body><div class="ribbon"><span class="brand">Freelance Guide</span><span class="byline">Created by <b>Panji</b></span></div><nav class="nav"><a href="index.html">Home</a><a href="freelance_guide_javascript.html">JavaScript</a><a href="freelance_guide_react.html">React</a><a href="freelance_guide_tailwind.html">Tailwind</a><a href="freelance_guide_typescript.html">TypeScript</a><a href="freelance_guide_nextjs.html">Next.js</a><a href="freelance_guide_signup.html">Sign up</a><a href="freelance_guide_review.html" class="here">Review</a></nav><main class="wrap"><div class="eyebrow">Feedback</div><h1>Leave a review</h1><p class="lede">Tell us how you found the guide and what you thought.</p><div class="field"><label for="heard">How did you hear about this?</label><select class="sel" id="heard"><option value="">Choose one…</option><option>Friend or word of mouth</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Google search</option><option>Reddit</option><option>Discord</option><option>Other</option></select></div><div class="field"><label>Your rating</label><div class="stars" id="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div></div><div class="field"><label for="review">Your review</label><textarea class="ta" id="review" placeholder="What worked, what didn't, what you'd add…"></textarea></div><div class="field"><label for="rname">Name (optional)</label><input class="inp" id="rname" type="text" placeholder="Leave blank to stay anonymous"></div><input class="hide" id="company" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="cta"><button class="btn" id="go">Send review</button></div><div class="msg" id="msg"></div><script>
+const ACCESS_KEY = "88780f3e-b2d3-4056-809e-9b6c0d1c683b";
+
+(function(){
+  var KEY = ACCESS_KEY;
+  var byId=function(i){return document.getElementById(i);};
+  var msg=byId('msg'); var rating=0;
+  var stars=Array.prototype.slice.call(document.querySelectorAll('.star'));
+  function paint(n){ stars.forEach(function(s,i){ s.classList.toggle('on', i<n); }); }
+  stars.forEach(function(s,i){ s.addEventListener('click',function(){ rating=i+1; paint(rating); }); });
+  function show(kind,text){ msg.className='msg show '+kind; msg.textContent=text; msg.scrollIntoView({behavior:'smooth',block:'center'}); }
+  byId('go').addEventListener('click', async function(){
+    var heard=byId('heard').value;
+    var review=byId('review').value.trim();
+    var name=byId('rname').value.trim();
+    if(byId('company').value){ return; }
+    if(!heard){ return show('err','Pick how you heard about this.'); }
+    if(rating<1){ return show('err','Tap a star to leave a rating.'); }
+    if(review.length<4){ return show('err','Add a sentence or two for your review.'); }
+    if(KEY.indexOf('YOUR_')===0){ return show('err','The form key has not been added yet, so this would not reach the inbox. Add your Web3Forms key first.'); }
+    byId('go').disabled=true; byId('go').textContent='Sending…';
+    try{
+      var r=await fetch('https://api.web3forms.com/submit',{method:'POST',
+        headers:{'Content-Type':'application/json',Accept:'application/json'},
+        body:JSON.stringify({
+          access_key:KEY,
+          subject:'New Freelance Guide review ('+rating+'/5)',
+          from_name:'Freelance Guide',
+          name:(name||'Anonymous'),
+          message:'Rating: '+rating+'/5\nHeard via: '+heard+'\nFrom: '+(name||'Anonymous')+'\n\n'+review
+        })});
+      var d=await r.json();
+      if(d.success){ show('good','Thanks for the review — it just landed in the inbox.'); byId('go').textContent='Sent ✓'; }
+      else { byId('go').disabled=false; byId('go').textContent='Send review'; show('err','Could not send: '+(d.message||'unknown error')+'.'); }
+    }catch(e){ byId('go').disabled=false; byId('go').textContent='Send review'; show('err','Network issue — try again.'); }
+  });
+})();
+
+</script><div class="foot">Freelance Guide · Created by Panji</div></main></body></html>
