@@ -1,111 +1,148 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Panji"><title>Freelance Guide - Created by Panji</title><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Panji"><title>Freelance Guide - Created by Panji</title><script>(function(){try{var s=localStorage.getItem("flg_theme");var t=s||((window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light");document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
 :root{
-  --bg:#0e0f1c;--surface:#171a2e;--surface2:#1f2340;--line:#2b2f55;--text:#e9e9f4;--muted:#9aa0c4;
-  --indigo:#8b7cff;--indigo-dim:#6f60e6;--mint:#37d99a;--coral:#ff6b6b;--amber:#fbbf24;--lock:#5a5f8a;
+  --bg:#FFF8EF;--surface:#FFFFFF;--surface2:#F4F0FF;--line:#E9E1FA;--text:#241B3D;--muted:#5C5277;
+  --indigo:#6D28FF;--indigo-dim:#5B16E0;--mint:#00B388;--coral:#FF3D68;--amber:#FF9F0A;--lock:#B9AEDB;
+  --mint-deep:#047857;--coral-deep:#C81444;--amber-deep:#A85B00;
+  --code-bg:#251A42;--code-line:#3C2A66;--code-text:#E7DCFF;--code-blank:#C9B6FF;
+  --placeholder:#A89DC4;--idle:#D8CEF2;--star-idle:#E5DCFA;--inline-code:#4C1FB8;--foot-color:#8A7FA8;
   --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --display:'Space Grotesk',var(--sans);
   --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+:root[data-theme="dark"]{
+  --bg:#14101F;--surface:#1E1830;--surface2:#251D3D;--line:#3A2F5C;--text:#F3EFFF;--muted:#B0A3D4;
+  --indigo:#A78BFA;--indigo-dim:#7C3AED;--mint:#34D399;--coral:#FF6B81;--amber:#FFB020;--lock:#6F6390;
+  --mint-deep:#34D399;--coral-deep:#FF6B81;--amber-deep:#FFB020;
+  --placeholder:#7A6B9E;--idle:#3A2F5C;--star-idle:#3A2F5C;--inline-code:#C9B6FF;--foot-color:#7A6B9E;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html,body{background:var(--bg);}
 body{color:var(--text);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;
- background:radial-gradient(1200px 600px at 100% -10%, rgba(139,124,255,.10), transparent 60%),var(--bg);}
+ background:radial-gradient(1100px 560px at 100% -8%, rgba(109,40,255,.10), transparent 60%),
+   radial-gradient(900px 520px at -10% 105%, rgba(255,159,10,.10), transparent 55%),var(--bg);}
 a{color:var(--indigo);text-decoration:none;}
-code{font-family:var(--mono);background:#0b0c18;border:1px solid var(--line);padding:1px 6px;border-radius:6px;font-size:.92em;color:#cdd0ff;}
+code{font-family:var(--mono);background:var(--surface2);border:1px solid var(--line);padding:1px 6px;border-radius:6px;font-size:.92em;color:var(--inline-code);}
 .ribbon{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);
- background:rgba(13,14,28,.82);backdrop-filter:saturate(140%) blur(6px);position:sticky;top:0;z-index:30;}
+ background:rgba(255,248,239,.86);backdrop-filter:saturate(140%) blur(6px);position:sticky;top:0;z-index:30;}
+:root[data-theme="dark"] .ribbon{background:rgba(20,16,31,.86);}
 .brand{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--indigo);text-transform:uppercase;}
-.byline{font-size:12px;color:var(--muted);}.byline b{color:var(--amber);font-weight:600;}
-.bar{position:sticky;top:43px;z-index:25;background:rgba(13,14,28,.82);backdrop-filter:blur(6px);padding:10px 16px 12px;border-bottom:1px solid var(--line);}
+.byline{font-size:12px;color:var(--muted);}.byline b{color:var(--amber-deep);font-weight:600;}
+.bar{position:sticky;top:43px;z-index:25;background:rgba(255,248,239,.86);backdrop-filter:blur(6px);padding:10px 16px 12px;border-bottom:1px solid var(--line);}
+:root[data-theme="dark"] .bar{background:rgba(20,16,31,.86);}
 .bartop{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;}
-.bartop .l{font-size:13px;color:var(--muted);}.bartop .r{font-family:var(--mono);font-size:12px;color:var(--mint);}
-.track{height:7px;background:#23264a;border-radius:999px;overflow:hidden;}
+.bartop .l{font-size:13px;color:var(--muted);}.bartop .r{font-family:var(--mono);font-size:12px;color:var(--mint-deep);font-weight:600;}
+.track{height:7px;background:var(--surface2);border-radius:999px;overflow:hidden;border:1px solid var(--line);}
 .fill{height:100%;background:linear-gradient(90deg,var(--indigo-dim),var(--mint));width:0;transition:width .4s ease;}
 .wrap{max-width:740px;margin:0 auto;padding:22px 16px 70px;}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--indigo);margin-bottom:10px;}
-h1{font-size:30px;line-height:1.1;letter-spacing:-.02em;font-weight:800;margin-bottom:8px;}
-h2{font-size:19px;margin:26px 0 10px;}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--indigo);margin-bottom:10px;font-weight:600;}
+h1{font-family:var(--display);font-size:32px;line-height:1.08;letter-spacing:-.01em;font-weight:700;margin-bottom:8px;color:var(--text);}
+h2{font-family:var(--display);font-size:20px;margin:26px 0 10px;font-weight:700;color:var(--text);}
 .lede{color:var(--muted);font-size:15px;max-width:60ch;}
-.topic{background:var(--surface);border:1px solid var(--line);border-radius:16px;margin-top:13px;overflow:hidden;}
-.topic.locked{opacity:.62;}
+.topic{background:var(--surface);border:1px solid var(--line);border-radius:16px;margin-top:13px;overflow:hidden;box-shadow:0 1px 2px rgba(36,27,61,.04);}
+:root[data-theme="dark"] .topic{box-shadow:none;}
+.topic.locked{opacity:.6;}
 .thead{display:flex;align-items:center;gap:12px;padding:15px 16px;cursor:pointer;user-select:none;}
 .topic.locked .thead{cursor:not-allowed;}
-.tnum{font-family:var(--mono);font-size:11px;color:var(--indigo);letter-spacing:.08em;text-transform:uppercase;}
-.tname{font-weight:800;font-size:17px;}.tmeta{color:var(--muted);font-size:13px;margin-top:1px;}
+.tnum{font-family:var(--mono);font-size:11px;color:var(--indigo);letter-spacing:.08em;text-transform:uppercase;font-weight:700;}
+.tname{font-weight:800;font-size:17px;color:var(--text);}.tmeta{color:var(--muted);font-size:13px;margin-top:1px;}
 .tstat{margin-left:auto;font-size:12px;font-family:var(--mono);display:flex;align-items:center;gap:7px;white-space:nowrap;}
-.dot{width:8px;height:8px;border-radius:50%;background:#3a3f6b;}.dot.done{background:var(--mint);}
-.badge{font-size:11px;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);}
-.badge.go{color:#c3bcff;border-color:rgba(139,124,255,.35);background:rgba(139,124,255,.12);}
-.badge.ok{color:#bff3dd;border-color:rgba(55,217,154,.3);background:rgba(55,217,154,.1);}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--idle);}.dot.done{background:var(--mint);}
+.badge{font-size:11px;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-weight:600;}
+.badge.go{color:var(--indigo-dim);border-color:rgba(109,40,255,.32);background:rgba(109,40,255,.10);}
+.badge.ok{color:var(--mint-deep);border-color:rgba(0,179,136,.32);background:rgba(0,179,136,.12);}
 .badge.lock{color:var(--lock);}
+.badge.retry{color:var(--amber-deep);border-color:rgba(255,159,10,.4);background:rgba(255,159,10,.14);}
 .tbody{border-top:1px solid var(--line);padding:14px 16px 16px;display:none;}.tbody.open{display:block;}
 .lockmsg{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;padding:2px 0;}
-.res{display:flex;justify-content:space-between;gap:10px;align-items:center;background:#13152a;border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px;}
+.res{display:flex;justify-content:space-between;gap:10px;align-items:center;background:var(--surface2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px;}
 .res .n{font-weight:600;color:var(--text);font-size:14px;}.res .m{font-family:var(--mono);font-size:11px;color:var(--muted);}
-.reslink{font-size:13px;color:var(--indigo);white-space:nowrap;}
+.reslink{font-size:13px;color:var(--indigo);white-space:nowrap;font-weight:600;}
 .qprog{font-family:var(--mono);font-size:12px;color:var(--muted);margin:14px 0 8px;}
-.qcard{background:#13152a;border:1px solid var(--line);border-radius:14px;padding:15px;}
-.qnum{font-family:var(--mono);font-size:11px;color:var(--indigo);letter-spacing:.08em;text-transform:uppercase;}
-.qkind{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;margin-left:8px;border:1px solid var(--line);color:var(--muted);}
-.qkind.code{color:#c3bcff;border-color:rgba(139,124,255,.35);background:rgba(139,124,255,.12);}
-.qtext{font-size:16px;font-weight:600;margin:6px 0 12px;}
-.code{font-family:var(--mono);font-size:13px;background:#0a0b16;border:1px solid var(--line);border-radius:11px;padding:12px 13px;margin:2px 0 12px;white-space:pre-wrap;line-height:1.75;color:#cdd0ff;overflow-x:auto;}
-.blank{display:inline-block;min-width:42px;text-align:center;border-bottom:2px solid var(--indigo);color:#8b8fc0;padding:0 6px;border-radius:5px 5px 0 0;background:rgba(139,124,255,.12);}
-.blank.fok{color:#0a0b16;background:var(--mint);border-bottom-color:var(--mint);font-weight:700;}
-.blank.frev{color:#0a0b16;background:var(--amber);border-bottom-color:var(--amber);font-weight:700;}
+.qcard{background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:15px;}
+.qnum{font-family:var(--mono);font-size:11px;color:var(--indigo);letter-spacing:.08em;text-transform:uppercase;font-weight:700;}
+.qkind{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;margin-left:8px;border:1px solid var(--line);color:var(--muted);background:var(--surface);}
+.qkind.code{color:var(--indigo-dim);border-color:rgba(109,40,255,.32);background:rgba(109,40,255,.10);}
+.qtext{font-size:16px;font-weight:600;margin:6px 0 12px;color:var(--text);}
+.code{font-family:var(--mono);font-size:13px;background:var(--code-bg);border:1px solid var(--code-line);border-radius:11px;padding:12px 13px;margin:2px 0 12px;white-space:pre-wrap;line-height:1.75;color:var(--code-text);overflow-x:auto;}
+.blank{display:inline-block;min-width:42px;text-align:center;border-bottom:2px solid var(--code-blank);color:var(--code-blank);padding:0 6px;border-radius:5px 5px 0 0;background:rgba(201,182,255,.16);}
+.blank.fok{color:#0a2e22;background:var(--mint);border-bottom-color:var(--mint);font-weight:700;}
+.blank.frev{color:#3a2400;background:var(--amber);border-bottom-color:var(--amber);font-weight:700;}
 .qrow{display:flex;gap:9px;}
-.qinput{flex:1;background:#0b0c18;border:1px solid var(--line);color:var(--text);border-radius:11px;padding:11px 13px;font-size:15px;font-family:var(--mono);outline:none;transition:border-color .12s,box-shadow .12s;}
-.qinput::placeholder{color:#5b6090;}
-.qinput:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(139,124,255,.18);}
+.qinput{flex:1;background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:11px 13px;font-size:15px;font-family:var(--mono);outline:none;transition:border-color .12s,box-shadow .12s;}
+.qinput::placeholder{color:var(--placeholder);}
+.qinput:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(109,40,255,.16);}
 .qinput.ok{border-color:var(--mint);}.qinput.bad{border-color:var(--coral);animation:shake .35s;}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
 .qbtn{background:var(--indigo-dim);color:#fff;border:none;border-radius:11px;padding:0 16px;font-weight:700;cursor:pointer;font-size:14px;}
 .qbtn:disabled{opacity:.5;cursor:default;}
 .pips{display:flex;align-items:center;gap:7px;margin-top:11px;}
-.pip{width:9px;height:9px;border-radius:50%;background:#2a2e52;}.pip.miss{background:var(--coral);}
+.pip{width:9px;height:9px;border-radius:50%;background:var(--idle);}.pip.miss{background:var(--coral);}
 .pipc{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:4px;}
 .qfb{display:none;margin-top:12px;border-radius:11px;padding:11px 13px;font-size:14px;border:1px solid var(--line);}
 .qfb.show{display:block;}
-.qfb.ok{background:rgba(55,217,154,.08);border-color:rgba(55,217,154,.3);}
-.qfb.bad{background:rgba(255,107,107,.08);border-color:rgba(255,107,107,.3);}
-.qfb.rev{background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.32);}
-.fbh{font-weight:700;margin-bottom:4px;}.qfb.ok .fbh{color:var(--mint);}.qfb.rev .fbh{color:var(--amber);}
+.qfb.ok{background:rgba(0,179,136,.08);border-color:rgba(0,179,136,.3);}
+.qfb.bad{background:rgba(255,61,104,.07);border-color:rgba(255,61,104,.28);}
+.qfb.rev{background:rgba(255,159,10,.09);border-color:rgba(255,159,10,.34);}
+.fbh{font-weight:700;margin-bottom:4px;}.qfb.ok .fbh{color:var(--mint-deep);}.qfb.rev .fbh{color:var(--amber-deep);}
 .fbb{color:var(--muted);}.fblink{display:inline-block;margin-top:8px;font-weight:600;}
 .nextrow{margin-top:13px;}
-.next{display:none;background:transparent;border:1px solid var(--indigo-dim);color:#fff;border-radius:11px;padding:10px 16px;font-weight:700;cursor:pointer;font-size:14px;}
-.done{background:rgba(55,217,154,.07);border:1px solid rgba(55,217,154,.3);border-radius:12px;padding:14px;}
-.doneh{font-weight:700;color:var(--mint);margin-bottom:4px;}.doneb{color:var(--muted);font-size:14px;}
-.retry{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.32);border-radius:12px;padding:14px;}
-.retryh{font-weight:700;color:var(--amber);margin-bottom:4px;}.retryb{color:var(--muted);font-size:14px;}
-.badge.retry{color:var(--amber);border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.12);}
-.gate{position:fixed;inset:0;z-index:50;background:rgba(8,9,18,.92);backdrop-filter:blur(8px);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:36px 16px;}
-.card{width:100%;max-width:440px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;}
+.next{display:none;background:transparent;border:1px solid var(--indigo-dim);color:var(--indigo-dim);border-radius:11px;padding:10px 16px;font-weight:700;cursor:pointer;font-size:14px;}
+.done{background:rgba(0,179,136,.08);border:1px solid rgba(0,179,136,.3);border-radius:12px;padding:14px;}
+.doneh{font-weight:700;color:var(--mint-deep);margin-bottom:4px;}.doneb{color:var(--muted);font-size:14px;}
+.retry{background:rgba(255,159,10,.09);border:1px solid rgba(255,159,10,.34);border-radius:12px;padding:14px;}
+.retryh{font-weight:700;color:var(--amber-deep);margin-bottom:4px;}.retryb{color:var(--muted);font-size:14px;}
+.badge.retry{color:var(--amber-deep);border-color:rgba(255,159,10,.35);background:rgba(255,159,10,.12);}
+.gate{position:fixed;inset:0;z-index:50;background:rgba(255,248,239,.92);backdrop-filter:blur(8px);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:36px 16px;}
+:root[data-theme="dark"] .gate{background:rgba(20,16,31,.92);}
+.card{width:100%;max-width:440px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 8px 30px rgba(109,40,255,.10);}
+:root[data-theme="dark"] .card{box-shadow:0 8px 30px rgba(0,0,0,.35);}
 .card h1{font-size:24px;}
 .field{margin-top:13px;}.field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px;font-weight:600;}
-.inp,.sel,.ta{width:100%;background:#0b0c18;border:1px solid var(--line);color:var(--text);border-radius:11px;padding:12px 13px;font-size:15px;font-family:var(--sans);outline:none;transition:border-color .12s,box-shadow .12s;}
-.inp:focus,.sel:focus,.ta:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(139,124,255,.18);}
+.inp,.sel,.ta{width:100%;background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:11px;padding:12px 13px;font-size:15px;font-family:var(--sans);outline:none;transition:border-color .12s,box-shadow .12s;}
+:root[data-theme="dark"] .inp,:root[data-theme="dark"] .sel,:root[data-theme="dark"] .ta{background:var(--surface2);}
+.inp:focus,.sel:focus,.ta:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(109,40,255,.16);}
 .ta{min-height:96px;resize:vertical;}
 .phone{display:flex;gap:9px;}.phone .sel{flex:0 0 132px;}
 .hide{position:absolute;left:-9999px;opacity:0;height:0;width:0;}
 .btn{display:inline-block;width:100%;background:var(--indigo-dim);color:#fff;font-weight:700;font-size:15px;padding:13px 18px;border-radius:12px;border:none;cursor:pointer;margin-top:16px;transition:filter .12s,transform .08s;}
 .btn:hover{filter:brightness(1.08);}.btn:active{transform:translateY(1px);}
+.btn:disabled{opacity:.55;cursor:default;}
+.btn.ghost{background:transparent;border:1px solid var(--indigo-dim);color:var(--indigo-dim);}
 .btn.sm{width:auto;margin-top:0;padding:11px 16px;font-size:14px;}
 .note{font-size:12px;color:var(--muted);margin-top:10px;}
 .msg{display:none;margin-top:13px;border-radius:11px;padding:11px 13px;font-size:14px;border:1px solid var(--line);}
 .msg.show{display:block;}
-.msg.good{background:rgba(55,217,154,.09);border-color:rgba(55,217,154,.32);color:#bff3dd;}
-.msg.err{background:rgba(255,107,107,.09);border-color:rgba(255,107,107,.32);color:#ffd0d0;}
+.msg.good{background:rgba(0,179,136,.09);border-color:rgba(0,179,136,.32);color:var(--mint-deep);}
+.msg.err{background:rgba(255,61,104,.08);border-color:rgba(255,61,104,.3);color:var(--coral-deep);}
 .stars{display:flex;gap:6px;font-size:28px;cursor:pointer;}
-.star{color:#3a3f6b;transition:color .1s,transform .08s;}.star.on{color:var(--amber);}.star:active{transform:scale(1.15);}
-.review{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:26px;}
+.star{color:var(--star-idle);transition:color .1s,transform .08s;}.star.on{color:var(--amber);}.star:active{transform:scale(1.15);}
+.review{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:26px;box-shadow:0 1px 2px rgba(36,27,61,.04);}
+:root[data-theme="dark"] .review{box-shadow:none;}
 .tinylink{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline;padding:0;}
-.foot{margin-top:28px;color:#6a6f98;font-size:12px;text-align:center;}
+.foot{margin-top:28px;color:var(--foot-color);font-size:12px;text-align:center;}
+.theme-toggle{position:fixed;top:14px;right:14px;z-index:60;width:40px;height:40px;border-radius:50%;
+ background:var(--surface);border:1px solid var(--line);color:var(--indigo);display:flex;align-items:center;
+ justify-content:center;cursor:pointer;box-shadow:0 2px 10px rgba(36,27,61,.10);transition:transform .15s,background .2s,border-color .2s;}
+:root[data-theme="dark"] .theme-toggle{box-shadow:0 2px 10px rgba(0,0,0,.4);}
+.theme-toggle:hover{transform:scale(1.06);}
+.theme-toggle:active{transform:scale(.94);}
+.theme-toggle:focus-visible{outline:2px solid var(--indigo);outline-offset:2px;}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important;}}
-@media (max-width:480px){h1{font-size:26px;}.phone .sel{flex:0 0 118px;}}
-</style></head><body><div class="gate" id="gate" style="display:none"><div class="card"><div class="eyebrow">Created by Panji</div><h1>Join the program</h1><p class="lede">Sign up to unlock the path. We only accept major email providers (Gmail, Outlook, Yahoo, iCloud, Proton, AOL). Custom and temporary inboxes are rejected.</p><div class="field"><label for="gname">Full name</label><input class="inp" id="gname" type="text" placeholder="Jane Doe" autocomplete="name"></div><div class="field"><label for="gemail">Email</label><input class="inp" id="gemail" type="email" placeholder="you@gmail.com" autocomplete="email" autocapitalize="off"></div><div class="field"><label for="gphone">Phone</label><div class="phone"><select class="sel" id="gcode"><option value="+977">Nepal +977</option><option value="+1">USA/Canada +1</option><option value="+91">India +91</option><option value="+44">UK +44</option><option value="+61">Australia +61</option><option value="+971">UAE +971</option><option value="+974">Qatar +974</option><option value="+49">Germany +49</option><option value="+33">France +33</option><option value="+81">Japan +81</option><option value="+82">South Korea +82</option><option value="+86">China +86</option><option value="+65">Singapore +65</option><option value="+60">Malaysia +60</option><option value="+66">Thailand +66</option><option value="+880">Bangladesh +880</option><option value="+92">Pakistan +92</option><option value="+94">Sri Lanka +94</option><option value="+63">Philippines +63</option><option value="+62">Indonesia +62</option><option value="+55">Brazil +55</option><option value="+52">Mexico +52</option><option value="+27">South Africa +27</option><option value="+90">Turkey +90</option><option value="+39">Italy +39</option><option value="+34">Spain +34</option><option value="+31">Netherlands +31</option><option value="+353">Ireland +353</option><option value="+64">New Zealand +64</option></select><input class="inp" id="gphone" type="tel" placeholder="Phone number" inputmode="numeric" autocomplete="tel"></div></div><input class="hide" id="ghp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn" id="ggo">Start the program</button><div class="msg" id="gmsg"></div><p class="note">Your details are emailed to the program team. After this, the site remembers you on this device and resumes automatically.</p></div></div><div id="app" style="display:none"><div class="ribbon"><span class="brand">Freelance Guide</span><span class="byline">Created by <b>Panji</b></span></div><div class="bar"><div class="bartop"><span class="l">Your progress</span><span class="r" id="barr">0 / 5 steps</span></div><div class="track"><div class="fill" id="fill"></div></div></div><main class="wrap"><div class="eyebrow">Front-end path &middot; ~5-6 weeks</div><h1>From zero to your first freelance gig.</h1><p class="lede">Five steps, each unlocking when you finish the last. Work the resources, then pass the quiz - a mix of theory and fill-in-the-blank code, in random order, one question at a time. Miss any question five times and the answer unlocks with an explanation.</p><div id="topics"></div><div class="review"><div class="eyebrow">Created by Panji</div><h2 style="margin-top:6px">Leave a review</h2><div class="field"><label for="heard">How did you hear about this?</label><select class="sel" id="heard"><option value="">Choose one...</option><option>Friend or word of mouth</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Google search</option><option>Reddit</option><option>Discord</option><option>Other</option></select></div><div class="field"><label>Your rating</label><div class="stars" id="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div></div><div class="field"><label for="review">Your review</label><textarea class="ta" id="review" placeholder="What worked, what you would add..."></textarea></div><div class="field"><label for="rname">Name (optional)</label><input class="inp" id="rname" type="text" placeholder="Leave blank to stay anonymous"></div><input class="hide" id="rhp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn sm" id="rgo">Send review</button><div class="msg" id="rmsg"></div></div><div class="foot">Freelance Guide &middot; Created by Panji &middot; <button class="tinylink" onclick="window.__resetGuide()">Reset progress</button></div></main></div><script>
+@media (max-width:480px){h1{font-size:27px;}.phone .sel{flex:0 0 118px;}.theme-toggle{width:36px;height:36px;top:10px;right:10px;}}
+</style></head><body><div class="gate" id="gate" style="display:none"><div class="card" id="screenChoice"><div class="eyebrow">Created by Panji</div><h1>Welcome</h1><p class="lede">New to the program, or coming back to pick up where you left off?</p><button class="btn" id="choiceSignup">Sign up &mdash; I am new</button><button class="btn ghost" id="choiceSignin">Sign in &mdash; I have an account</button></div><div class="card" id="screenSignupForm" style="display:none"><div class="eyebrow">Created by Panji</div><h1>Join the program</h1><p class="lede">Only major email providers accepted - Gmail, Outlook, Yahoo, iCloud, Proton, AOL.</p><div class="field"><label for="suEmail">Email</label><input class="inp" id="suEmail" type="email" placeholder="you@gmail.com" autocomplete="email" autocapitalize="off"></div><div class="field"><label for="suName">Full name</label><input class="inp" id="suName" type="text" placeholder="Jane Doe" autocomplete="name"></div><div class="field"><label for="suPhone">Phone</label><div class="phone"><select class="sel" id="suCode"><option value="+977">Nepal +977</option><option value="+1">USA/Canada +1</option><option value="+91">India +91</option><option value="+44">UK +44</option><option value="+61">Australia +61</option><option value="+971">UAE +971</option><option value="+974">Qatar +974</option><option value="+49">Germany +49</option><option value="+33">France +33</option><option value="+81">Japan +81</option><option value="+82">South Korea +82</option><option value="+86">China +86</option><option value="+65">Singapore +65</option><option value="+60">Malaysia +60</option><option value="+66">Thailand +66</option><option value="+880">Bangladesh +880</option><option value="+92">Pakistan +92</option><option value="+94">Sri Lanka +94</option><option value="+63">Philippines +63</option><option value="+62">Indonesia +62</option><option value="+55">Brazil +55</option><option value="+52">Mexico +52</option><option value="+27">South Africa +27</option><option value="+90">Turkey +90</option><option value="+39">Italy +39</option><option value="+34">Spain +34</option><option value="+31">Netherlands +31</option><option value="+353">Ireland +353</option><option value="+64">New Zealand +64</option></select><input class="inp" id="suPhone" type="tel" placeholder="Phone number" inputmode="numeric" autocomplete="tel"></div></div><input class="hide" id="suHp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn" id="suGo">Send me a code</button><div class="msg" id="suMsg"></div><button class="tinylink" id="suBack" style="margin-top:14px;display:block">Back</button></div><div class="card" id="screenSigninForm" style="display:none"><div class="eyebrow">Created by Panji</div><h1>Sign in</h1><p class="lede">Enter the email you signed up with and we will send a login code.</p><div class="field"><label for="siEmail">Email</label><input class="inp" id="siEmail" type="email" placeholder="you@gmail.com" autocomplete="email" autocapitalize="off"></div><button class="btn" id="siGo">Send me a code</button><div class="msg" id="siMsg"></div><button class="tinylink" id="siSwitch" style="margin-top:12px;display:none">No account found &mdash; sign up instead</button><button class="tinylink" id="siBack" style="margin-top:10px;display:block">Back</button></div><div class="card" id="screenCode" style="display:none"><div class="eyebrow">Created by Panji</div><h1>Enter your code</h1><p class="lede">We sent a 6-digit code to <b id="codeToEmail" style="color:#c3bcff"></b>.</p><div class="field"><label for="ccode">Code</label><input class="inp" id="ccode" type="text" inputmode="numeric" placeholder="123456" autocomplete="one-time-code"></div><button class="btn" id="cgo">Verify &amp; continue</button><div class="msg" id="cmsg"></div><button class="tinylink" id="cresend" style="margin-top:14px;display:block">Resend code</button><button class="tinylink" id="cback" style="margin-top:8px;display:block">Back</button></div></div><div id="app" style="display:none"><div class="ribbon"><span class="brand">Freelance Guide</span><span class="byline">Created by <b>Panji</b></span></div><div class="bar"><div class="bartop"><span class="l">Your progress</span><span class="r" id="barr">0 / 5 steps</span></div><div class="track"><div class="fill" id="fill"></div></div></div><main class="wrap"><div class="eyebrow">Front-end path &middot; ~5-6 weeks</div><h1>From zero to your first freelance gig.</h1><p class="lede">Five steps, each unlocking when you score well enough on the last. Theory and fill-in-the-blank code, mixed and shuffled. Miss a question five times and the answer unlocks with an explanation. Your progress is saved to your account and follows you across devices.</p><div id="topics"></div><div class="review"><div class="eyebrow">Created by Panji</div><h2 style="margin-top:6px">Leave a review</h2><div class="field"><label for="heard">How did you hear about this?</label><select class="sel" id="heard"><option value="">Choose one...</option><option>Friend or word of mouth</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Google search</option><option>Reddit</option><option>Discord</option><option>Other</option></select></div><div class="field"><label>Your rating</label><div class="stars" id="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div></div><div class="field"><label for="review">Your review</label><textarea class="ta" id="review" placeholder="What worked, what you would add..."></textarea></div><div class="field"><label for="rname">Name (optional)</label><input class="inp" id="rname" type="text" placeholder="Leave blank to stay anonymous"></div><input class="hide" id="rhp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn sm" id="rgo">Send review</button><div class="msg" id="rmsg"></div></div><div class="foot">Freelance Guide &middot; Created by Panji &middot; <button class="tinylink" onclick="window.__logout()">Log out</button></div></main></div><button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"><svg id="iconSun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg id="iconMoon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button><script>(function(){function paint(t){var s=document.getElementById("iconSun"),m=document.getElementById("iconMoon");if(s&&m){s.style.display=t==="dark"?"block":"none";m.style.display=t==="dark"?"none":"block";}}var b=document.getElementById("themeToggle");paint(document.documentElement.getAttribute("data-theme")||"light");if(b){b.addEventListener("click",function(){var next=document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",next);paint(next);try{localStorage.setItem("flg_theme",next);}catch(e){}});}})();</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
 (function(){
-  var KEY = "71523cbd-8142-46d3-868a-102294bfc48b";
-  var STORE = "flg_state_v4";
+  var WEB3KEY = "71523cbd-8142-46d3-868a-102294bfc48b";
+  var ALLOWED = ["gmail.com", "googlemail.com", "outlook.com", "outlook.co.uk", "hotmail.com", "hotmail.co.uk", "hotmail.fr", "live.com", "live.co.uk", "msn.com", "yahoo.com", "yahoo.co.uk", "yahoo.co.in", "yahoo.ca", "yahoo.com.au", "ymail.com", "rocketmail.com", "icloud.com", "me.com", "mac.com", "proton.me", "protonmail.com", "aol.com", "gmx.com", "gmx.net", "zoho.com", "yandex.com", "yandex.ru", "mail.com", "hey.com"];
   var TOPICS = [{"id": "js", "name": "JavaScript", "step": "Step 1", "time": "1 week", "blurb": "The language everything else sits on.", "resources": [{"name": "freeCodeCamp JavaScript", "url": "https://www.youtube.com/watch?v=PkZNo7MFNFg", "type": "Video", "dur": "4 hours"}, {"name": "Codecademy JavaScript", "url": "https://www.codecademy.com/learn/introduction-to-javascript", "type": "Interactive", "dur": "Self-paced"}, {"name": "MDN JavaScript Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide", "type": "Reference", "dur": "As needed"}], "questions": [{"id": "js1", "type": "theory", "q": "Which keyword declares a block-scoped variable you CAN reassign?", "accept": ["let"], "hint": "Not `const`, not `var`.", "explanation": "`let` is block-scoped and reassignable. `const` can't be reassigned; `var` is outdated.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js2", "type": "theory", "q": "Which operator checks value AND type with no coercion? (type the symbol)", "accept": ["==="], "hint": "Three of the same character.", "explanation": "`===` is strict equality, no type coercion. `==` coerces types and causes bugs.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js3", "type": "theory", "q": "Inside an async function, which keyword pauses until a Promise settles?", "accept": ["await"], "hint": "It pairs with `async`.", "explanation": "`await` waits for a Promise to resolve before continuing.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js4", "type": "theory", "q": "Which array method adds an item to the END of an array?", "accept": ["push"], "hint": "Opposite of `pop`.", "explanation": "`arr.push(x)` appends to the end and returns the new length.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js5", "type": "code", "q": "Fill the blank to print to the console:", "code": "console.@@@(\"hello\");", "accept": ["log"], "hint": "Your main debugging tool.", "explanation": "`console.log(...)` prints to the browser console.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js6", "type": "code", "q": "Fill the blank: declare a constant named PI.", "code": "@@@ PI = 3.14159;", "accept": ["const"], "hint": "A value you won't reassign.", "explanation": "`const` declares a value that can't be reassigned.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js7", "type": "code", "q": "Fill the blank to make a new array of each number doubled.", "code": "const doubled = nums.@@@(n => n * 2);", "accept": ["map"], "hint": "Returns a NEW array, one item per input.", "explanation": "`map` transforms each element and returns a new array. `forEach` just loops, returning nothing.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}]}, {"id": "react", "name": "React", "step": "Step 2", "time": "1.5 weeks", "blurb": "Components, state, and props.", "resources": [{"name": "React Official Tutorial", "url": "https://react.dev/learn/tutorial-tic-tac-toe", "type": "Official", "dur": "Self-paced"}, {"name": "React Main Concepts", "url": "https://react.dev/learn", "type": "Docs", "dur": "Self-paced"}, {"name": "Scrimba React Course", "url": "https://scrimba.com/learn/learnreact", "type": "Interactive", "dur": "6-8 hours"}], "questions": [{"id": "re1", "type": "theory", "q": "Which Hook lets a function component hold state?", "accept": ["usestate"], "hint": "Returns a value and a setter.", "explanation": "`useState` returns [value, setValue]. Call the setter to update and re-render.", "link": "https://react.dev/reference/react/useState"}, {"id": "re2", "type": "theory", "q": "Which Hook runs side effects (like fetching) after render?", "accept": ["useeffect"], "hint": "Runs after the component paints.", "explanation": "`useEffect(fn, deps)` runs after render; the dependency array controls re-runs.", "link": "https://react.dev/reference/react/useEffect"}, {"id": "re3", "type": "theory", "q": "What do you call data passed from a parent component to a child?", "accept": ["props", "prop"], "hint": "Short for properties.", "explanation": "Props are read-only inputs a parent passes down.", "link": "https://react.dev/learn"}, {"id": "re4", "type": "theory", "q": "In JSX, which attribute replaces HTML's `class`?", "accept": ["classname"], "hint": "`class` is reserved in JS.", "explanation": "JSX uses `className` because `class` is a reserved word.", "link": "https://react.dev/learn"}, {"id": "re5", "type": "code", "q": "Fill the blank to add state with an initial value of 0.", "code": "const [count, setCount] = @@@(0);", "accept": ["usestate"], "hint": "The state Hook.", "explanation": "`useState(0)` returns the current value and a setter function.", "link": "https://react.dev/reference/react/useState"}, {"id": "re6", "type": "code", "q": "Fill the blank to run an effect once after mount.", "code": "@@@(() => {\n  console.log(\"mounted\");\n}, []);", "accept": ["useeffect"], "hint": "The effect Hook with an empty array.", "explanation": "`useEffect` with an empty `[]` runs once after the first render.", "link": "https://react.dev/reference/react/useEffect"}, {"id": "re7", "type": "code", "q": "Fill the blank: the JSX attribute for a CSS class.", "code": "<div @@@=\"card\">Hi</div>", "accept": ["classname"], "hint": "Not `class`.", "explanation": "JSX uses `className` instead of `class`.", "link": "https://react.dev/learn"}]}, {"id": "tailwind", "name": "Tailwind CSS", "step": "Step 3", "time": "3-4 days", "blurb": "Style fast with utility classes.", "resources": [{"name": "Tailwind Docs", "url": "https://tailwindcss.com/docs/utility-first", "type": "Official", "dur": "Self-paced"}, {"name": "Tailwind Playground", "url": "https://play.tailwindcss.com/", "type": "Tool", "dur": "As needed"}, {"name": "Scrimba Tailwind", "url": "https://scrimba.com/learn/tailwind", "type": "Video", "dur": "3-4 hours"}], "questions": [{"id": "tw1", "type": "theory", "q": "Which utility class sets `display: flex`?", "accept": ["flex"], "hint": "Just the property value.", "explanation": "`flex` sets display:flex. Pair with `items-center` and `gap-*`.", "link": "https://tailwindcss.com/docs/flex"}, {"id": "tw2", "type": "theory", "q": "Which prefix applies a style only on medium screens and up?", "accept": ["md", "md:"], "hint": "768px breakpoint, mobile-first.", "explanation": "`md:` applies at 768px and up. Unprefixed classes are the base.", "link": "https://tailwindcss.com/docs/responsive-design"}, {"id": "tw3", "type": "theory", "q": "Which prefix applies styles on hover?", "accept": ["hover", "hover:"], "hint": "Same word as CSS :hover.", "explanation": "`hover:` applies a style while hovering, e.g. `hover:bg-indigo-600`.", "link": "https://tailwindcss.com/docs/hover-focus-and-other-states"}, {"id": "tw4", "type": "code", "q": "Fill the blank to turn on flexbox.", "code": "<div class=\"@@@ items-center gap-2\">", "accept": ["flex"], "hint": "One word.", "explanation": "`flex` sets display:flex on the element.", "link": "https://tailwindcss.com/docs/flex"}, {"id": "tw5", "type": "code", "q": "Fill the blank: bigger text on medium screens and up.", "code": "<p class=\"text-sm @@@:text-lg\">", "accept": ["md"], "hint": "The 768px breakpoint prefix.", "explanation": "`md:` applies the style at 768px and wider.", "link": "https://tailwindcss.com/docs/responsive-design"}, {"id": "tw6", "type": "code", "q": "Fill the blank: 1rem of padding on all sides (scale: 4 = 1rem).", "code": "<div class=\"@@@-4\">", "accept": ["p"], "hint": "`p` is padding.", "explanation": "`p-4` is 1rem of padding all around.", "link": "https://tailwindcss.com/docs/padding"}]}, {"id": "typescript", "name": "TypeScript", "step": "Step 4", "time": "3-4 days", "blurb": "Types catch bugs before they ship.", "resources": [{"name": "TypeScript Handbook", "url": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html", "type": "Official", "dur": "Self-paced"}, {"name": "freeCodeCamp TypeScript", "url": "https://www.youtube.com/watch?v=BCg4perUJv0", "type": "Video", "dur": "1 hour"}], "questions": [{"id": "ts1", "type": "theory", "q": "Which type means 'any value, opt out of checking' (and should be avoided)?", "accept": ["any"], "hint": "It throws away TypeScript's point.", "explanation": "`any` disables type checking. Prefer `unknown`, which forces a check before use.", "link": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html"}, {"id": "ts2", "type": "theory", "q": "Which keyword defines an object shape you can implement or extend?", "accept": ["interface"], "hint": "Starts with 'inter'.", "explanation": "`interface` describes the shape of an object.", "link": "https://www.typescriptlang.org/docs/handbook/2/objects.html"}, {"id": "ts3", "type": "theory", "q": "Which type represents a value that never occurs (e.g. always throws)?", "accept": ["never"], "hint": "Opposite of 'always'.", "explanation": "`never` is for values that can't happen, like a function that always throws.", "link": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html"}, {"id": "ts4", "type": "code", "q": "Fill the blank to define an object shape called User.", "code": "@@@ User {\n  name: string;\n  age: number;\n}", "accept": ["interface"], "hint": "The object-shape keyword.", "explanation": "`interface` defines the shape of an object you can reuse.", "link": "https://www.typescriptlang.org/docs/handbook/2/objects.html"}, {"id": "ts5", "type": "code", "q": "Fill the blank: type this id as a number.", "code": "let id: @@@ = 5;", "accept": ["number"], "hint": "Annotate after the colon.", "explanation": "Types go after a colon: `id: number`.", "link": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html"}, {"id": "ts6", "type": "code", "q": "Fill the blank: mark nickname as optional.", "code": "interface P {\n  nickname@@@: string;\n}", "accept": ["?"], "hint": "A single symbol before the colon.", "explanation": "A `?` before the colon makes a property optional.", "link": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html"}]}, {"id": "nextjs", "name": "Next.js", "step": "Step 5", "time": "1 week", "blurb": "The React framework clients ask for.", "resources": [{"name": "Next.js Tutorial", "url": "https://nextjs.org/learn", "type": "Official", "dur": "Self-paced"}, {"name": "Next.js Docs", "url": "https://nextjs.org/docs", "type": "Docs", "dur": "Reference"}, {"name": "Vercel Deploy Guide", "url": "https://vercel.com/docs/deployments/overview", "type": "Docs", "dur": "15 min"}], "questions": [{"id": "nx1", "type": "theory", "q": "What is the folder name that holds App Router routes?", "accept": ["app"], "hint": "Three letters.", "explanation": "The `app/` directory holds App Router routes; each folder is a URL segment.", "link": "https://nextjs.org/learn"}, {"id": "nx2", "type": "theory", "q": "Which company makes Next.js and offers one-click deployment?", "accept": ["vercel"], "hint": "You published here.", "explanation": "Vercel builds Next.js and gives free instant deploys.", "link": "https://vercel.com"}, {"id": "nx3", "type": "theory", "q": "In the App Router, are components Server or Client by default? (one word)", "accept": ["server"], "hint": "You add 'use client' to opt out.", "explanation": "App Router components are Server Components by default.", "link": "https://nextjs.org/learn"}, {"id": "nx4", "type": "code", "q": "Fill the blank: the file that defines a route's UI.", "code": "app/about/@@@.tsx", "accept": ["page", "page.tsx"], "hint": "Lives inside a route folder.", "explanation": "`page.tsx` defines the UI for a route segment.", "link": "https://nextjs.org/learn"}, {"id": "nx5", "type": "code", "q": "Fill the blank: the directive that makes a Client Component.", "code": "@@@;\nimport { useState } from \"react\";", "accept": ["use client"], "hint": "Two words, goes at the very top.", "explanation": "Add `'use client'` at the top of a file to opt into a Client Component (needed for state, effects).", "link": "https://nextjs.org/learn"}, {"id": "nx6", "type": "code", "q": "Fill the blank: import the component for client-side navigation.", "code": "import Link from \"next/@@@\";", "accept": ["link"], "hint": "Lowercase, matches the import name.", "explanation": "`next/link` provides the `<Link>` component for fast client-side navigation.", "link": "https://nextjs.org/learn"}]}];
+  if(typeof supabase === 'undefined' || !supabase.createClient){
+    var g=document.getElementById('gate');
+    g.style.display='flex';
+    g.innerHTML='<div class="card"><div class="eyebrow">Created by Panji</div><h1>Could not load sign-in</h1><p class="lede">The login service did not load - check your connection and reload the page.</p></div>';
+    return;
+  }
+  var sb = supabase.createClient("https://edlbfntdebuosvxtczck.supabase.co", "sb_publishable_NQHSEUHWSxgDLWFFNvQTbg_Uh49bR8_");
+
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function fmt(s){return esc(s).replace(/`([^`]+)`/g,'<code>$1</code>');}
   function norm(s){return String(s).toLowerCase().trim().replace(/['"]/g,'').replace(/[();]/g,'').replace(/\s+/g,' ');}
@@ -114,10 +151,11 @@ h2{font-size:19px;margin:26px 0 10px;}
   function renderCode(code,value,cls){var i=code.indexOf('@@@');if(i<0)return esc(code);
     var before=code.slice(0,i),after=code.slice(i+3);var inner=(value!=null)?esc(value):'?';
     return esc(before)+'<span class="blank'+(cls?(' '+cls):'')+'">'+inner+'</span>'+esc(after);}
-  var state=load(),order={},openIdx=null;
-  function load(){ try{var s=localStorage.getItem(STORE); if(s) return JSON.parse(s);}catch(e){} return {user:null,progress:{}}; }
-  function save(){ try{localStorage.setItem(STORE, JSON.stringify(state));}catch(e){} }
-  function prog(id){ if(!state.progress[id]) state.progress[id]={answered:{}}; return state.progress[id]; }
+
+  var localProgress=loadLocal(), order={}, openIdx=null, cloudUser=null;
+  function loadLocal(){ try{var s=localStorage.getItem('flg_progress_cache'); if(s) return JSON.parse(s);}catch(e){} return {}; }
+  function saveLocal(){ try{localStorage.setItem('flg_progress_cache', JSON.stringify(localProgress));}catch(e){} }
+  function prog(id){ if(!localProgress[id]) localProgress[id]={answered:{}}; return localProgress[id]; }
   function answeredCount(t){var p=prog(t.id);return t.questions.filter(function(q){return p.answered[q.id];}).length;}
   function correctCount(t){var p=prog(t.id);return t.questions.filter(function(q){return p.answered[q.id]==='correct';}).length;}
   function topicDone(t){return answeredCount(t)===t.questions.length;}
@@ -125,6 +163,17 @@ h2{font-size:19px;margin:26px 0 10px;}
   function topicPassed(t){return topicDone(t) && correctCount(t)>=passMark(t);}
   function unlocked(i){ if(i===0) return true; return topicPassed(TOPICS[i-1]); }
   function doneTopics(){var n=0;TOPICS.forEach(function(t){if(topicPassed(t))n++;});return n;}
+
+  var cloudSyncTimer=null;
+  function syncCloud(){
+    saveLocal();
+    if(!cloudUser) return;
+    clearTimeout(cloudSyncTimer);
+    cloudSyncTimer=setTimeout(function(){
+      sb.auth.updateUser({ data:{ name:cloudUser.name, phone:cloudUser.phone, progress:localProgress } }).catch(function(){});
+    }, 500);
+  }
+
   var app=document.getElementById('app');
   function renderBar(){var d=doneTopics(),pct=Math.round(d/TOPICS.length*100);
     document.getElementById('fill').style.width=pct+'%';document.getElementById('barr').textContent=d+' / '+TOPICS.length+' steps';}
@@ -171,7 +220,7 @@ h2{font-size:19px;margin:26px 0 10px;}
     function showRetry(){ slot.innerHTML='';
       var c=el('div','retry'); c.innerHTML='<div class="retryh">Almost - not enough correct yet</div><div class="retryb">You got '+correctCount(t)+' / '+t.questions.length+' correct on the first try. You need at least '+passMark(t)+' to unlock the next step. Redo the practice problems to raise your score.</div>';
       var b=el('button','btn sm','Redo practice'); b.style.marginTop='12px';
-      b.addEventListener('click',function(){ prog(t.id).answered={}; order[t.id]=shuffle(t.questions.map(function(q){return q.id;})); save(); renderBar(); statOnly(); refresh(); var s=nextItem(); if(s) showQ(s); else resolveEnd(); });
+      b.addEventListener('click',function(){ prog(t.id).answered={}; order[t.id]=shuffle(t.questions.map(function(q){return q.id;})); syncCloud(); renderBar(); statOnly(); refresh(); var s=nextItem(); if(s) showQ(s); else resolveEnd(); });
       c.appendChild(b); slot.appendChild(c); }
     function resolveEnd(){ if(topicPassed(t)) showDone(); else showRetry(); }
     function showQ(item){
@@ -193,7 +242,7 @@ h2{font-size:19px;margin:26px 0 10px;}
       var fb=el('div','qfb'); card.appendChild(fb);
       var nr=el('div','nextrow'); var next=el('button','next',''); next.textContent='Next question \u2192'; nr.appendChild(next); card.appendChild(nr);
       slot.appendChild(card);
-      function finish(){ done=true; input.disabled=true; btn.disabled=true; save(); refresh(); renderBar(); statOnly(); next.style.display='inline-block'; }
+      function finish(){ done=true; input.disabled=true; btn.disabled=true; syncCloud(); refresh(); renderBar(); statOnly(); next.style.display='inline-block'; }
       function correct(){ p.answered[item.id]='correct'; input.classList.add('ok'); if(codeEl) codeEl.innerHTML=renderCode(item.code,item.accept[0],'fok');
         fb.className='qfb show ok'; fb.innerHTML='<div class="fbh">Correct &#10003;</div><div class="fbb">'+fmt(item.explanation)+'</div>'; finish(); }
       function reveal(){ p.answered[item.id]='revealed'; for(var i=0;i<5;i++)pe[i].classList.add('miss'); pc.textContent='5 / 5';
@@ -230,6 +279,7 @@ h2{font-size:19px;margin:26px 0 10px;}
   }
   function statOnly(){ var host=document.getElementById('topics'); if(!host)return;
     TOPICS.forEach(function(t,i){ var card=host.children[i]; if(!card)return; var stat=card.querySelector('.tstat'); if(stat) stat.innerHTML=statHTML(t,i); }); }
+
   function wireReview(){
     var rating=0; var stars=Array.prototype.slice.call(document.querySelectorAll('#stars .star'));
     stars.forEach(function(s,i){ s.addEventListener('click',function(){ rating=i+1; stars.forEach(function(x,j){x.classList.toggle('on', j<rating);}); }); });
@@ -242,47 +292,152 @@ h2{font-size:19px;margin:26px 0 10px;}
       if(review.length<4) return show('err','Add a sentence or two for your review.');
       var btn=document.getElementById('rgo'); btn.disabled=true; btn.textContent='Sending...';
       try{ var r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
-          body:JSON.stringify({access_key:KEY,subject:'New Freelance Guide review ('+rating+'/5)',from_name:'Freelance Guide',name:(name||'Anonymous'),message:'Rating: '+rating+'/5\nHeard via: '+heard+'\nFrom: '+(name||'Anonymous')+'\n\n'+review})});
+          body:JSON.stringify({access_key:WEB3KEY,subject:'New Freelance Guide review ('+rating+'/5)',from_name:'Freelance Guide',name:(name||'Anonymous'),message:'Rating: '+rating+'/5\nHeard via: '+heard+'\nFrom: '+(name||'Anonymous')+'\n\n'+review})});
         var d=await r.json();
         if(d.success){ show('good','Thanks - your review just landed in the inbox.'); btn.textContent='Sent'; }
         else { btn.disabled=false; btn.textContent='Send review'; show('err','Could not send: '+(d.message||'error')+'.'); }
       }catch(e){ btn.disabled=false; btn.textContent='Send review'; show('err','Network issue - try again.'); }
     });
   }
-  function showGate(){
-    var g=document.getElementById('gate'); g.style.display='flex';
-    var msg=document.getElementById('gmsg'); function show(k,txt){ msg.className='msg show '+k; msg.textContent=txt; }
-    function emailOk(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e); }
-    var ALLOWED=["gmail.com","googlemail.com","outlook.com","outlook.co.uk","hotmail.com","hotmail.co.uk","hotmail.fr","live.com","live.co.uk","msn.com","yahoo.com","yahoo.co.uk","yahoo.co.in","yahoo.ca","yahoo.com.au","ymail.com","rocketmail.com","icloud.com","me.com","mac.com","proton.me","protonmail.com","aol.com","gmx.com","gmx.net","zoho.com","yandex.com","yandex.ru","mail.com","hey.com"];
-    function allowed(e){ var d=(e.split('@')[1]||'').toLowerCase(); return ALLOWED.indexOf(d)>=0; }
-    document.getElementById('ggo').addEventListener('click', async function(){
-      var name=document.getElementById('gname').value.trim(); var email=document.getElementById('gemail').value.trim();
-      var code=document.getElementById('gcode').value; var phone=document.getElementById('gphone').value.trim();
-      if(document.getElementById('ghp').value) return;
-      if(name.length<2) return show('err','Enter your full name.');
+
+  // -------- auth screens --------
+  var gate=document.getElementById('gate');
+  var screenChoice=document.getElementById('screenChoice');
+  var screenSignupForm=document.getElementById('screenSignupForm');
+  var screenSigninForm=document.getElementById('screenSigninForm');
+  var screenCode=document.getElementById('screenCode');
+  function showScreen(name){
+    gate.style.display='flex';
+    screenChoice.style.display = name==='choice' ? 'block':'none';
+    screenSignupForm.style.display = name==='signup' ? 'block':'none';
+    screenSigninForm.style.display = name==='signin' ? 'block':'none';
+    screenCode.style.display = name==='code' ? 'block':'none';
+  }
+  function hideGate(){ gate.style.display='none'; }
+  function emailOk(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e); }
+  function allowedDomain(e){ var d=(e.split('@')[1]||'').toLowerCase(); return ALLOWED.indexOf(d)>=0; }
+  var pendingEmail='';
+
+  document.getElementById('choiceSignup').addEventListener('click', function(){ showScreen('signup'); });
+  document.getElementById('choiceSignin').addEventListener('click', function(){ showScreen('signin'); });
+
+  (function(){
+    var msg=document.getElementById('suMsg'); function show(k,t){ msg.className='msg show '+k; msg.textContent=t; }
+    document.getElementById('suBack').addEventListener('click', function(){ showScreen('choice'); });
+    document.getElementById('suGo').addEventListener('click', async function(){
+      var email=document.getElementById('suEmail').value.trim();
+      var name=document.getElementById('suName').value.trim();
+      var code=document.getElementById('suCode').value;
+      var phone=document.getElementById('suPhone').value.trim();
+      if(document.getElementById('suHp').value) return;
       if(!emailOk(email)) return show('err','Enter a valid email, e.g. you@gmail.com.');
-      if(!allowed(email)) return show('err','Use a major email provider - Gmail, Outlook, Yahoo, iCloud, Proton, AOL, etc. Custom, work, and temporary addresses are not accepted here.');
+      if(!allowedDomain(email)) return show('err','Use a major email provider - Gmail, Outlook, Yahoo, iCloud, Proton, AOL, etc.');
+      if(name.length<2) return show('err','Enter your full name.');
       if(!/^[0-9]{6,15}$/.test(phone)) return show('err','Enter your phone number - digits only, 6 to 15 of them.');
-      var btn=document.getElementById('ggo'); btn.disabled=true; btn.textContent='Joining...';
-      state.user={name:name,email:email,phone:code+' '+phone}; save();
-      try{ await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
-          body:JSON.stringify({access_key:KEY,subject:'New Freelance Guide signup',from_name:'Freelance Guide',name:name,email:email,phone:code+' '+phone,message:name+' signed up for the program.\nEmail: '+email+'\nPhone: '+code+' '+phone})});
+      var btn=document.getElementById('suGo'); btn.disabled=true; btn.textContent='Checking email...';
+      pendingEmail=email; var fullPhone=code+' '+phone;
+      try{
+        var v=await sb.functions.invoke('verify-email', { body:{ email:email } });
+        if(v && v.data && v.data.ok===false){
+          btn.disabled=false; btn.textContent='Send me a code';
+          return show('err','That email address looks undeliverable. Double check it, or try a different one.');
+        }
+      }catch(e){ /* verification unavailable - proceed without blocking a real signup */ }
+      btn.textContent='Sending code...';
+      var res=await sb.auth.signInWithOtp({ email:email, options:{ shouldCreateUser:true, data:{ name:name, phone:fullPhone } } });
+      btn.disabled=false; btn.textContent='Send me a code';
+      if(res.error){ return show('err', res.error.message || 'Could not send the code. Try again.'); }
+      try{ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+          body:JSON.stringify({access_key:WEB3KEY,subject:'New Freelance Guide signup',from_name:'Freelance Guide',name:name,email:email,phone:fullPhone,message:name+' signed up for the program.\nEmail: '+email+'\nPhone: '+fullPhone})});
       }catch(e){}
-      g.style.display='none'; boot();
+      cloudUser={ name:name, phone:fullPhone };
+      document.getElementById('codeToEmail').textContent=email;
+      showScreen('code'); startResendCooldown();
     });
+  })();
+
+  (function(){
+    var msg=document.getElementById('siMsg'); function show(k,t){ msg.className='msg show '+k; msg.textContent=t; }
+    document.getElementById('siBack').addEventListener('click', function(){ showScreen('choice'); });
+    document.getElementById('siSwitch').addEventListener('click', function(){
+      document.getElementById('suEmail').value=document.getElementById('siEmail').value.trim();
+      showScreen('signup');
+    });
+    document.getElementById('siGo').addEventListener('click', async function(){
+      var email=document.getElementById('siEmail').value.trim();
+      document.getElementById('siSwitch').style.display='none';
+      if(!emailOk(email)) return show('err','Enter a valid email, e.g. you@gmail.com.');
+      var btn=document.getElementById('siGo'); btn.disabled=true; btn.textContent='Checking...';
+      pendingEmail=email;
+      var res=await sb.auth.signInWithOtp({ email:email, options:{ shouldCreateUser:false } });
+      btn.disabled=false; btn.textContent='Send me a code';
+      if(!res.error){
+        document.getElementById('codeToEmail').textContent=email;
+        showScreen('code'); startResendCooldown();
+      } else {
+        var m=(res.error.message||'').toLowerCase();
+        if(m.indexOf('security purposes')>=0 || m.indexOf('seconds')>=0 || m.indexOf('rate')>=0){
+          return show('err','Please wait a moment and try again.');
+        }
+        show('err','No account found for that email.');
+        document.getElementById('siSwitch').style.display='block';
+      }
+    });
+  })();
+
+  var resendTimer=null;
+  function startResendCooldown(){
+    var btn=document.getElementById('cresend'); var s=60; btn.disabled=true;
+    clearInterval(resendTimer);
+    function tick(){ btn.textContent='Resend code ('+s+'s)'; if(s<=0){ clearInterval(resendTimer); btn.disabled=false; btn.textContent='Resend code'; return;} s--; }
+    tick(); resendTimer=setInterval(tick,1000);
   }
-  function showWelcome(){
-    var g=document.getElementById('gate'); var first=esc((state.user.name||'').split(' ')[0]||'there');
-    g.innerHTML='<div class="card"><div class="eyebrow">Welcome back</div><h1>Hey '+first+'</h1><p class="lede">We remembered you on this device - pick up right where you left off.</p><button class="btn" id="cont">Continue</button><button class="tinylink" id="switch" style="margin-top:14px;display:block">Not you? Start fresh</button></div>';
-    g.style.display='flex';
-    document.getElementById('cont').addEventListener('click',function(){ g.style.display='none'; boot(); });
-    document.getElementById('switch').addEventListener('click',function(){ state={user:null,progress:{}}; save(); location.reload(); });
+  (function(){
+    var msg=document.getElementById('cmsg'); function show(k,t){ msg.className='msg show '+k; msg.textContent=t; }
+    document.getElementById('cback').addEventListener('click', function(){ showScreen('choice'); });
+    document.getElementById('cresend').addEventListener('click', async function(){
+      var btn=document.getElementById('cresend'); btn.disabled=true;
+      await sb.auth.signInWithOtp({ email:pendingEmail, options:{ shouldCreateUser:true } });
+      show('good','New code sent.'); startResendCooldown();
+    });
+    document.getElementById('cgo').addEventListener('click', async function(){
+      var code=document.getElementById('ccode').value.trim();
+      if(!/^[0-9]{4,8}$/.test(code)) return show('err','Enter the code from your email.');
+      var btn=document.getElementById('cgo'); btn.disabled=true; btn.textContent='Verifying...';
+      var res=await sb.auth.verifyOtp({ email:pendingEmail, token:code, type:'email' });
+      btn.disabled=false; btn.textContent='Verify & continue';
+      if(res.error){ return show('err', res.error.message || 'That code did not work. Try again or resend.'); }
+      applySession(res.data.session);
+    });
+  })();
+
+  function applySession(session){
+    var u=session.user, md=u.user_metadata||{};
+    cloudUser={ id:u.id, email:u.email, name:md.name||'', phone:md.phone||'' };
+    if(md.progress && typeof md.progress==='object'){ localProgress=md.progress; saveLocal(); }
+    hideGate(); boot();
   }
-  function boot(){ app.style.display='block'; renderBar(); renderTopics();
-    var target=null; for(var i=0;i<TOPICS.length;i++){ if(unlocked(i) && !topicDone(TOPICS[i])){ target=i; break; } }
-    if(target!==null){ openIdx=target; renderTopics(); } }
-  window.__resetGuide=function(){ if(confirm('Reset all progress and sign-up on this device?')){ state={user:null,progress:{}}; save(); location.reload(); } };
+  async function tryAutoLogin(){
+    var r=await sb.auth.getSession();
+    if(r.data && r.data.session){ applySession(r.data.session); return true; }
+    return false;
+  }
+
+  function boot(){
+    app.style.display='block'; renderBar(); renderTopics();
+    var target=null; for(var i=0;i<TOPICS.length;i++){ if(unlocked(i) && !topicPassed(TOPICS[i])){ target=i; break; } }
+    if(target!==null){ openIdx=target; renderTopics(); }
+  }
+  window.__logout=async function(){
+    if(!confirm('Log out? Your progress is saved to your account and will be there next time you log in.')) return;
+    try{ await sb.auth.signOut(); }catch(e){}
+    location.reload();
+  };
+
   wireReview();
-  if(state.user){ showWelcome(); } else { showGate(); }
+  (async function init(){
+    var already=await tryAutoLogin();
+    if(!already) showScreen('choice');
+  })();
 })();
 </script></body></html>
