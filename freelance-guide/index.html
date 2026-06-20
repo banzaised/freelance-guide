@@ -130,18 +130,10 @@ h2{font-family:var(--display);font-size:20px;margin:26px 0 10px;font-weight:700;
 .theme-toggle:focus-visible{outline:2px solid var(--indigo);outline-offset:2px;}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important;}}
 @media (max-width:480px){h1{font-size:27px;}.phone .sel{flex:0 0 118px;}.theme-toggle{width:36px;height:36px;top:10px;right:10px;}}
-</style></head><body><div class="gate" id="gate" style="display:none"><div class="card" id="screenChoice"><div class="eyebrow">Created by Panji</div><h1>Welcome</h1><p class="lede">New to the program, or coming back to pick up where you left off?</p><button class="btn" id="choiceSignup">Sign up &mdash; I am new</button><button class="btn ghost" id="choiceSignin">Sign in &mdash; I have an account</button></div><div class="card" id="screenSignupForm" style="display:none"><div class="eyebrow">Created by Panji</div><h1>Join the program</h1><p class="lede">Only major email providers accepted - Gmail, Outlook, Yahoo, iCloud, Proton, AOL.</p><div class="field"><label for="suEmail">Email</label><input class="inp" id="suEmail" type="email" placeholder="you@gmail.com" autocomplete="email" autocapitalize="off"></div><div class="field"><label for="suName">Full name</label><input class="inp" id="suName" type="text" placeholder="Jane Doe" autocomplete="name"></div><div class="field"><label for="suPhone">Phone</label><div class="phone"><select class="sel" id="suCode"><option value="+977">Nepal +977</option><option value="+1">USA/Canada +1</option><option value="+91">India +91</option><option value="+44">UK +44</option><option value="+61">Australia +61</option><option value="+971">UAE +971</option><option value="+974">Qatar +974</option><option value="+49">Germany +49</option><option value="+33">France +33</option><option value="+81">Japan +81</option><option value="+82">South Korea +82</option><option value="+86">China +86</option><option value="+65">Singapore +65</option><option value="+60">Malaysia +60</option><option value="+66">Thailand +66</option><option value="+880">Bangladesh +880</option><option value="+92">Pakistan +92</option><option value="+94">Sri Lanka +94</option><option value="+63">Philippines +63</option><option value="+62">Indonesia +62</option><option value="+55">Brazil +55</option><option value="+52">Mexico +52</option><option value="+27">South Africa +27</option><option value="+90">Turkey +90</option><option value="+39">Italy +39</option><option value="+34">Spain +34</option><option value="+31">Netherlands +31</option><option value="+353">Ireland +353</option><option value="+64">New Zealand +64</option></select><input class="inp" id="suPhone" type="tel" placeholder="Phone number" inputmode="numeric" autocomplete="tel"></div></div><input class="hide" id="suHp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn" id="suGo">Send me a code</button><div class="msg" id="suMsg"></div><button class="tinylink" id="suBack" style="margin-top:14px;display:block">Back</button></div><div class="card" id="screenSigninForm" style="display:none"><div class="eyebrow">Created by Panji</div><h1>Sign in</h1><p class="lede">Enter the email you signed up with and we will send a login code.</p><div class="field"><label for="siEmail">Email</label><input class="inp" id="siEmail" type="email" placeholder="you@gmail.com" autocomplete="email" autocapitalize="off"></div><button class="btn" id="siGo">Send me a code</button><div class="msg" id="siMsg"></div><button class="tinylink" id="siSwitch" style="margin-top:12px;display:none">No account found &mdash; sign up instead</button><button class="tinylink" id="siBack" style="margin-top:10px;display:block">Back</button></div><div class="card" id="screenCode" style="display:none"><div class="eyebrow">Created by Panji</div><h1>Enter your code</h1><p class="lede">We sent an email to <b id="codeToEmail" style="color:#c3bcff"></b>. Open it and click the sign-in link - you will land right back here, signed in. If it ever shows a 6-digit code instead, you can type it below.</p><div class="field"><label for="ccode">Code</label><input class="inp" id="ccode" type="text" inputmode="numeric" placeholder="123456" autocomplete="one-time-code"></div><button class="btn" id="cgo">Verify &amp; continue</button><div class="msg" id="cmsg"></div><button class="tinylink" id="cresend" style="margin-top:14px;display:block">Resend code</button><button class="tinylink" id="cback" style="margin-top:8px;display:block">Back</button></div></div><div id="app" style="display:none"><div class="ribbon"><span class="brand">Freelance Guide</span><span class="byline">Created by <b>Panji</b></span></div><div class="bar"><div class="bartop"><span class="l">Your progress</span><span class="r" id="barr">0 / 5 steps</span></div><div class="track"><div class="fill" id="fill"></div></div></div><main class="wrap"><div class="eyebrow">Front-end path &middot; ~5-6 weeks</div><h1>From zero to your first freelance gig.</h1><p class="lede">Five steps, each unlocking when you score well enough on the last. Theory and fill-in-the-blank code, mixed and shuffled. Miss a question five times and the answer unlocks with an explanation. Your progress is saved to your account and follows you across devices.</p><div id="topics"></div><div class="review"><div class="eyebrow">Created by Panji</div><h2 style="margin-top:6px">Leave a review</h2><div class="field"><label for="heard">How did you hear about this?</label><select class="sel" id="heard"><option value="">Choose one...</option><option>Friend or word of mouth</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Google search</option><option>Reddit</option><option>Discord</option><option>Other</option></select></div><div class="field"><label>Your rating</label><div class="stars" id="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div></div><div class="field"><label for="review">Your review</label><textarea class="ta" id="review" placeholder="What worked, what you would add..."></textarea></div><div class="field"><label for="rname">Name (optional)</label><input class="inp" id="rname" type="text" placeholder="Leave blank to stay anonymous"></div><input class="hide" id="rhp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn sm" id="rgo">Send review</button><div class="msg" id="rmsg"></div></div><div class="foot">Freelance Guide &middot; Created by Panji &middot; <button class="tinylink" onclick="window.__logout()">Log out</button></div></main></div><button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"><svg id="iconSun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg id="iconMoon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button><script>(function(){function paint(t){var s=document.getElementById("iconSun"),m=document.getElementById("iconMoon");if(s&&m){s.style.display=t==="dark"?"block":"none";m.style.display=t==="dark"?"none":"block";}}var b=document.getElementById("themeToggle");paint(document.documentElement.getAttribute("data-theme")||"light");if(b){b.addEventListener("click",function(){var next=document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",next);paint(next);try{localStorage.setItem("flg_theme",next);}catch(e){}});}})();</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
+</style></head><body><div class="gate" id="gate" style="display:none"><div class="card" id="screenPass"><div class="eyebrow">Created by Panji</div><h1>Freelance Guide</h1><p class="lede">Enter the access key to continue.</p><div class="field"><label for="pinput">Access key</label><input class="inp" id="pinput" type="password" placeholder="••••••••••••" autocomplete="current-password"></div><button class="btn" id="pgo">Enter</button><div class="msg" id="pmsg"></div></div></div><div id="app" style="display:none"><div class="ribbon"><span class="brand">Freelance Guide</span><span class="byline">Created by <b>Panji</b></span></div><div class="bar"><div class="bartop"><span class="l">Your progress</span><span class="r" id="barr">0 / 5 steps</span></div><div class="track"><div class="fill" id="fill"></div></div></div><main class="wrap"><div class="eyebrow">Front-end path &middot; ~5-6 weeks</div><h1>From zero to your first freelance gig.</h1><p class="lede">Five steps, each unlocking when you score well enough on the last. Theory and fill-in-the-blank code, mixed and shuffled. Miss a question five times and the answer unlocks with an explanation.</p><div id="topics"></div><div class="review"><div class="eyebrow">Created by Panji</div><h2 style="margin-top:6px">Leave a review</h2><div class="field"><label for="heard">How did you hear about this?</label><select class="sel" id="heard"><option value="">Choose one...</option><option>Friend or word of mouth</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Google search</option><option>Reddit</option><option>Discord</option><option>Other</option></select></div><div class="field"><label>Your rating</label><div class="stars" id="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div></div><div class="field"><label for="review">Your review</label><textarea class="ta" id="review" placeholder="What worked, what you would add..."></textarea></div><div class="field"><label for="rname">Name (optional)</label><input class="inp" id="rname" type="text" placeholder="Leave blank to stay anonymous"></div><input class="hide" id="rhp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn sm" id="rgo">Send review</button><div class="msg" id="rmsg"></div></div><div class="foot">Freelance Guide &middot; Created by Panji &middot; <button class="tinylink" onclick="window.__logout()">Lock</button></div></main></div><button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"><svg id="iconSun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg id="iconMoon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button><script>(function(){function paint(t){var s=document.getElementById("iconSun"),m=document.getElementById("iconMoon");if(s&&m){s.style.display=t==="dark"?"block":"none";m.style.display=t==="dark"?"none":"block";}}var b=document.getElementById("themeToggle");paint(document.documentElement.getAttribute("data-theme")||"light");if(b){b.addEventListener("click",function(){var next=document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",next);paint(next);try{localStorage.setItem("flg_theme",next);}catch(e){}});}})();</script><script>
 (function(){
-  var WEB3KEY = "71523cbd-8142-46d3-868a-102294bfc48b";
-  var ALLOWED = ["gmail.com", "googlemail.com", "outlook.com", "outlook.co.uk", "hotmail.com", "hotmail.co.uk", "hotmail.fr", "live.com", "live.co.uk", "msn.com", "yahoo.com", "yahoo.co.uk", "yahoo.co.in", "yahoo.ca", "yahoo.com.au", "ymail.com", "rocketmail.com", "icloud.com", "me.com", "mac.com", "proton.me", "protonmail.com", "aol.com", "gmx.com", "gmx.net", "zoho.com", "yandex.com", "yandex.ru", "mail.com", "hey.com"];
   var TOPICS = [{"id": "js", "name": "JavaScript", "step": "Step 1", "time": "1 week", "blurb": "The language everything else sits on.", "resources": [{"name": "freeCodeCamp JavaScript", "url": "https://www.youtube.com/watch?v=PkZNo7MFNFg", "type": "Video", "dur": "4 hours"}, {"name": "Codecademy JavaScript", "url": "https://www.codecademy.com/learn/introduction-to-javascript", "type": "Interactive", "dur": "Self-paced"}, {"name": "MDN JavaScript Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide", "type": "Reference", "dur": "As needed"}], "questions": [{"id": "js1", "type": "theory", "q": "Which keyword declares a block-scoped variable you CAN reassign?", "accept": ["let"], "hint": "Not `const`, not `var`.", "explanation": "`let` is block-scoped and reassignable. `const` can't be reassigned; `var` is outdated.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js2", "type": "theory", "q": "Which operator checks value AND type with no coercion? (type the symbol)", "accept": ["==="], "hint": "Three of the same character.", "explanation": "`===` is strict equality, no type coercion. `==` coerces types and causes bugs.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js3", "type": "theory", "q": "Inside an async function, which keyword pauses until a Promise settles?", "accept": ["await"], "hint": "It pairs with `async`.", "explanation": "`await` waits for a Promise to resolve before continuing.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js4", "type": "theory", "q": "Which array method adds an item to the END of an array?", "accept": ["push"], "hint": "Opposite of `pop`.", "explanation": "`arr.push(x)` appends to the end and returns the new length.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js5", "type": "code", "q": "Fill the blank to print to the console:", "code": "console.@@@(\"hello\");", "accept": ["log"], "hint": "Your main debugging tool.", "explanation": "`console.log(...)` prints to the browser console.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js6", "type": "code", "q": "Fill the blank: declare a constant named PI.", "code": "@@@ PI = 3.14159;", "accept": ["const"], "hint": "A value you won't reassign.", "explanation": "`const` declares a value that can't be reassigned.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}, {"id": "js7", "type": "code", "q": "Fill the blank to make a new array of each number doubled.", "code": "const doubled = nums.@@@(n => n * 2);", "accept": ["map"], "hint": "Returns a NEW array, one item per input.", "explanation": "`map` transforms each element and returns a new array. `forEach` just loops, returning nothing.", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"}]}, {"id": "react", "name": "React", "step": "Step 2", "time": "1.5 weeks", "blurb": "Components, state, and props.", "resources": [{"name": "React Official Tutorial", "url": "https://react.dev/learn/tutorial-tic-tac-toe", "type": "Official", "dur": "Self-paced"}, {"name": "React Main Concepts", "url": "https://react.dev/learn", "type": "Docs", "dur": "Self-paced"}, {"name": "Scrimba React Course", "url": "https://scrimba.com/learn/learnreact", "type": "Interactive", "dur": "6-8 hours"}], "questions": [{"id": "re1", "type": "theory", "q": "Which Hook lets a function component hold state?", "accept": ["usestate"], "hint": "Returns a value and a setter.", "explanation": "`useState` returns [value, setValue]. Call the setter to update and re-render.", "link": "https://react.dev/reference/react/useState"}, {"id": "re2", "type": "theory", "q": "Which Hook runs side effects (like fetching) after render?", "accept": ["useeffect"], "hint": "Runs after the component paints.", "explanation": "`useEffect(fn, deps)` runs after render; the dependency array controls re-runs.", "link": "https://react.dev/reference/react/useEffect"}, {"id": "re3", "type": "theory", "q": "What do you call data passed from a parent component to a child?", "accept": ["props", "prop"], "hint": "Short for properties.", "explanation": "Props are read-only inputs a parent passes down.", "link": "https://react.dev/learn"}, {"id": "re4", "type": "theory", "q": "In JSX, which attribute replaces HTML's `class`?", "accept": ["classname"], "hint": "`class` is reserved in JS.", "explanation": "JSX uses `className` because `class` is a reserved word.", "link": "https://react.dev/learn"}, {"id": "re5", "type": "code", "q": "Fill the blank to add state with an initial value of 0.", "code": "const [count, setCount] = @@@(0);", "accept": ["usestate"], "hint": "The state Hook.", "explanation": "`useState(0)` returns the current value and a setter function.", "link": "https://react.dev/reference/react/useState"}, {"id": "re6", "type": "code", "q": "Fill the blank to run an effect once after mount.", "code": "@@@(() => {\n  console.log(\"mounted\");\n}, []);", "accept": ["useeffect"], "hint": "The effect Hook with an empty array.", "explanation": "`useEffect` with an empty `[]` runs once after the first render.", "link": "https://react.dev/reference/react/useEffect"}, {"id": "re7", "type": "code", "q": "Fill the blank: the JSX attribute for a CSS class.", "code": "<div @@@=\"card\">Hi</div>", "accept": ["classname"], "hint": "Not `class`.", "explanation": "JSX uses `className` instead of `class`.", "link": "https://react.dev/learn"}]}, {"id": "tailwind", "name": "Tailwind CSS", "step": "Step 3", "time": "3-4 days", "blurb": "Style fast with utility classes.", "resources": [{"name": "Tailwind Docs", "url": "https://tailwindcss.com/docs/utility-first", "type": "Official", "dur": "Self-paced"}, {"name": "Tailwind Playground", "url": "https://play.tailwindcss.com/", "type": "Tool", "dur": "As needed"}, {"name": "Scrimba Tailwind", "url": "https://scrimba.com/learn/tailwind", "type": "Video", "dur": "3-4 hours"}], "questions": [{"id": "tw1", "type": "theory", "q": "Which utility class sets `display: flex`?", "accept": ["flex"], "hint": "Just the property value.", "explanation": "`flex` sets display:flex. Pair with `items-center` and `gap-*`.", "link": "https://tailwindcss.com/docs/flex"}, {"id": "tw2", "type": "theory", "q": "Which prefix applies a style only on medium screens and up?", "accept": ["md", "md:"], "hint": "768px breakpoint, mobile-first.", "explanation": "`md:` applies at 768px and up. Unprefixed classes are the base.", "link": "https://tailwindcss.com/docs/responsive-design"}, {"id": "tw3", "type": "theory", "q": "Which prefix applies styles on hover?", "accept": ["hover", "hover:"], "hint": "Same word as CSS :hover.", "explanation": "`hover:` applies a style while hovering, e.g. `hover:bg-indigo-600`.", "link": "https://tailwindcss.com/docs/hover-focus-and-other-states"}, {"id": "tw4", "type": "code", "q": "Fill the blank to turn on flexbox.", "code": "<div class=\"@@@ items-center gap-2\">", "accept": ["flex"], "hint": "One word.", "explanation": "`flex` sets display:flex on the element.", "link": "https://tailwindcss.com/docs/flex"}, {"id": "tw5", "type": "code", "q": "Fill the blank: bigger text on medium screens and up.", "code": "<p class=\"text-sm @@@:text-lg\">", "accept": ["md"], "hint": "The 768px breakpoint prefix.", "explanation": "`md:` applies the style at 768px and wider.", "link": "https://tailwindcss.com/docs/responsive-design"}, {"id": "tw6", "type": "code", "q": "Fill the blank: 1rem of padding on all sides (scale: 4 = 1rem).", "code": "<div class=\"@@@-4\">", "accept": ["p"], "hint": "`p` is padding.", "explanation": "`p-4` is 1rem of padding all around.", "link": "https://tailwindcss.com/docs/padding"}]}, {"id": "typescript", "name": "TypeScript", "step": "Step 4", "time": "3-4 days", "blurb": "Types catch bugs before they ship.", "resources": [{"name": "TypeScript Handbook", "url": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html", "type": "Official", "dur": "Self-paced"}, {"name": "freeCodeCamp TypeScript", "url": "https://www.youtube.com/watch?v=BCg4perUJv0", "type": "Video", "dur": "1 hour"}], "questions": [{"id": "ts1", "type": "theory", "q": "Which type means 'any value, opt out of checking' (and should be avoided)?", "accept": ["any"], "hint": "It throws away TypeScript's point.", "explanation": "`any` disables type checking. Prefer `unknown`, which forces a check before use.", "link": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html"}, {"id": "ts2", "type": "theory", "q": "Which keyword defines an object shape you can implement or extend?", "accept": ["interface"], "hint": "Starts with 'inter'.", "explanation": "`interface` describes the shape of an object.", "link": "https://www.typescriptlang.org/docs/handbook/2/objects.html"}, {"id": "ts3", "type": "theory", "q": "Which type represents a value that never occurs (e.g. always throws)?", "accept": ["never"], "hint": "Opposite of 'always'.", "explanation": "`never` is for values that can't happen, like a function that always throws.", "link": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html"}, {"id": "ts4", "type": "code", "q": "Fill the blank to define an object shape called User.", "code": "@@@ User {\n  name: string;\n  age: number;\n}", "accept": ["interface"], "hint": "The object-shape keyword.", "explanation": "`interface` defines the shape of an object you can reuse.", "link": "https://www.typescriptlang.org/docs/handbook/2/objects.html"}, {"id": "ts5", "type": "code", "q": "Fill the blank: type this id as a number.", "code": "let id: @@@ = 5;", "accept": ["number"], "hint": "Annotate after the colon.", "explanation": "Types go after a colon: `id: number`.", "link": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html"}, {"id": "ts6", "type": "code", "q": "Fill the blank: mark nickname as optional.", "code": "interface P {\n  nickname@@@: string;\n}", "accept": ["?"], "hint": "A single symbol before the colon.", "explanation": "A `?` before the colon makes a property optional.", "link": "https://www.typescriptlang.org/docs/handbook/2/basic-types.html"}]}, {"id": "nextjs", "name": "Next.js", "step": "Step 5", "time": "1 week", "blurb": "The React framework clients ask for.", "resources": [{"name": "Next.js Tutorial", "url": "https://nextjs.org/learn", "type": "Official", "dur": "Self-paced"}, {"name": "Next.js Docs", "url": "https://nextjs.org/docs", "type": "Docs", "dur": "Reference"}, {"name": "Vercel Deploy Guide", "url": "https://vercel.com/docs/deployments/overview", "type": "Docs", "dur": "15 min"}], "questions": [{"id": "nx1", "type": "theory", "q": "What is the folder name that holds App Router routes?", "accept": ["app"], "hint": "Three letters.", "explanation": "The `app/` directory holds App Router routes; each folder is a URL segment.", "link": "https://nextjs.org/learn"}, {"id": "nx2", "type": "theory", "q": "Which company makes Next.js and offers one-click deployment?", "accept": ["vercel"], "hint": "You published here.", "explanation": "Vercel builds Next.js and gives free instant deploys.", "link": "https://vercel.com"}, {"id": "nx3", "type": "theory", "q": "In the App Router, are components Server or Client by default? (one word)", "accept": ["server"], "hint": "You add 'use client' to opt out.", "explanation": "App Router components are Server Components by default.", "link": "https://nextjs.org/learn"}, {"id": "nx4", "type": "code", "q": "Fill the blank: the file that defines a route's UI.", "code": "app/about/@@@.tsx", "accept": ["page", "page.tsx"], "hint": "Lives inside a route folder.", "explanation": "`page.tsx` defines the UI for a route segment.", "link": "https://nextjs.org/learn"}, {"id": "nx5", "type": "code", "q": "Fill the blank: the directive that makes a Client Component.", "code": "@@@;\nimport { useState } from \"react\";", "accept": ["use client"], "hint": "Two words, goes at the very top.", "explanation": "Add `'use client'` at the top of a file to opt into a Client Component (needed for state, effects).", "link": "https://nextjs.org/learn"}, {"id": "nx6", "type": "code", "q": "Fill the blank: import the component for client-side navigation.", "code": "import Link from \"next/@@@\";", "accept": ["link"], "hint": "Lowercase, matches the import name.", "explanation": "`next/link` provides the `<Link>` component for fast client-side navigation.", "link": "https://nextjs.org/learn"}]}];
-  if(typeof supabase === 'undefined' || !supabase.createClient){
-    var g=document.getElementById('gate');
-    g.style.display='flex';
-    g.innerHTML='<div class="card"><div class="eyebrow">Created by Panji</div><h1>Could not load sign-in</h1><p class="lede">The login service did not load - check your connection and reload the page.</p></div>';
-    return;
-  }
-  var sb = supabase.createClient("https://edlbfntdebuosvxtczck.supabase.co", "sb_publishable_NQHSEUHWSxgDLWFFNvQTbg_Uh49bR8_");
+  var PASS = "freelance101";
 
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function fmt(s){return esc(s).replace(/`([^`]+)`/g,'<code>$1</code>');}
@@ -152,7 +144,7 @@ h2{font-family:var(--display);font-size:20px;margin:26px 0 10px;font-weight:700;
     var before=code.slice(0,i),after=code.slice(i+3);var inner=(value!=null)?esc(value):'?';
     return esc(before)+'<span class="blank'+(cls?(' '+cls):'')+'">'+inner+'</span>'+esc(after);}
 
-  var localProgress=loadLocal(), order={}, openIdx=null, cloudUser=null;
+  var localProgress=loadLocal(), order={}, openIdx=null;
   function loadLocal(){ try{var s=localStorage.getItem('flg_progress_cache'); if(s) return JSON.parse(s);}catch(e){} return {}; }
   function saveLocal(){ try{localStorage.setItem('flg_progress_cache', JSON.stringify(localProgress));}catch(e){} }
   function prog(id){ if(!localProgress[id]) localProgress[id]={answered:{}}; return localProgress[id]; }
@@ -163,16 +155,6 @@ h2{font-family:var(--display);font-size:20px;margin:26px 0 10px;font-weight:700;
   function topicPassed(t){return topicDone(t) && correctCount(t)>=passMark(t);}
   function unlocked(i){ if(i===0) return true; return topicPassed(TOPICS[i-1]); }
   function doneTopics(){var n=0;TOPICS.forEach(function(t){if(topicPassed(t))n++;});return n;}
-
-  var cloudSyncTimer=null;
-  function syncCloud(){
-    saveLocal();
-    if(!cloudUser) return;
-    clearTimeout(cloudSyncTimer);
-    cloudSyncTimer=setTimeout(function(){
-      sb.auth.updateUser({ data:{ name:cloudUser.name, phone:cloudUser.phone, progress:localProgress } }).catch(function(){});
-    }, 500);
-  }
 
   var app=document.getElementById('app');
   function renderBar(){var d=doneTopics(),pct=Math.round(d/TOPICS.length*100);
@@ -220,7 +202,7 @@ h2{font-family:var(--display);font-size:20px;margin:26px 0 10px;font-weight:700;
     function showRetry(){ slot.innerHTML='';
       var c=el('div','retry'); c.innerHTML='<div class="retryh">Almost - not enough correct yet</div><div class="retryb">You got '+correctCount(t)+' / '+t.questions.length+' correct on the first try. You need at least '+passMark(t)+' to unlock the next step. Redo the practice problems to raise your score.</div>';
       var b=el('button','btn sm','Redo practice'); b.style.marginTop='12px';
-      b.addEventListener('click',function(){ prog(t.id).answered={}; order[t.id]=shuffle(t.questions.map(function(q){return q.id;})); syncCloud(); renderBar(); statOnly(); refresh(); var s=nextItem(); if(s) showQ(s); else resolveEnd(); });
+      b.addEventListener('click',function(){ prog(t.id).answered={}; order[t.id]=shuffle(t.questions.map(function(q){return q.id;})); saveLocal(); renderBar(); statOnly(); refresh(); var s=nextItem(); if(s) showQ(s); else resolveEnd(); });
       c.appendChild(b); slot.appendChild(c); }
     function resolveEnd(){ if(topicPassed(t)) showDone(); else showRetry(); }
     function showQ(item){
@@ -234,15 +216,14 @@ h2{font-family:var(--display);font-size:20px;margin:26px 0 10px;font-weight:700;
       var row=el('div','qrow');
       var input=el('input','qinput'); input.type='text'; input.placeholder=isCode?'Type what goes in the blank':'Type your answer';
       input.setAttribute('autocapitalize','off'); input.setAttribute('autocomplete','off'); input.spellcheck=false;
-      var btn=el('button','qbtn',''); btn.textContent='Check';
-      row.appendChild(input); row.appendChild(btn); card.appendChild(row);
+      var btn=el('button','qbtn','Check'); row.appendChild(input); row.appendChild(btn); card.appendChild(row);
       var pips=el('div','pips'); var pe=[];
       for(var i=0;i<5;i++){var d=el('span','pip');pips.appendChild(d);pe.push(d);}
       var pc=el('span','pipc','0 / 5'); pips.appendChild(pc); card.appendChild(pips);
       var fb=el('div','qfb'); card.appendChild(fb);
-      var nr=el('div','nextrow'); var next=el('button','next',''); next.textContent='Next question \u2192'; nr.appendChild(next); card.appendChild(nr);
+      var nr=el('div','nextrow'); var next=el('button','next','Next question \u2192'); nr.appendChild(next); card.appendChild(nr);
       slot.appendChild(card);
-      function finish(){ done=true; input.disabled=true; btn.disabled=true; syncCloud(); refresh(); renderBar(); statOnly(); next.style.display='inline-block'; }
+      function finish(){ done=true; input.disabled=true; btn.disabled=true; saveLocal(); refresh(); renderBar(); statOnly(); next.style.display='inline-block'; }
       function correct(){ p.answered[item.id]='correct'; input.classList.add('ok'); if(codeEl) codeEl.innerHTML=renderCode(item.code,item.accept[0],'fok');
         fb.className='qfb show ok'; fb.innerHTML='<div class="fbh">Correct &#10003;</div><div class="fbb">'+fmt(item.explanation)+'</div>'; finish(); }
       function reveal(){ p.answered[item.id]='revealed'; for(var i=0;i<5;i++)pe[i].classList.add('miss'); pc.textContent='5 / 5';
@@ -252,7 +233,7 @@ h2{font-family:var(--display);font-size:20px;margin:26px 0 10px;font-weight:700;
       function wrong(){ attempts++; if(attempts<=5)pe[attempts-1].classList.add('miss'); pc.textContent=Math.min(attempts,5)+' / 5';
         input.classList.remove('ok'); input.classList.add('bad'); setTimeout(function(){input.classList.remove('bad');},360);
         if(attempts>=5){reveal();return;}
-        var m='Not quite — give it another go.'; if(attempts>=2 && item.hint) m='Not quite. Hint: '+item.hint;
+        var m='Not quite - give it another go.'; if(attempts>=2 && item.hint) m='Not quite. Hint: '+item.hint;
         fb.className='qfb show bad'; fb.innerHTML='<div class="fbb">'+fmt(m)+'</div>'; }
       function check(){ if(done)return; var v=norm(input.value);
         if(!v){fb.className='qfb show bad';fb.innerHTML='<div class="fbb">Type an answer first.</div>';return;}
@@ -281,6 +262,7 @@ h2{font-family:var(--display);font-size:20px;margin:26px 0 10px;font-weight:700;
     TOPICS.forEach(function(t,i){ var card=host.children[i]; if(!card)return; var stat=card.querySelector('.tstat'); if(stat) stat.innerHTML=statHTML(t,i); }); }
 
   function wireReview(){
+    var WEB3KEY = "71523cbd-8142-46d3-868a-102294bfc48b";
     var rating=0; var stars=Array.prototype.slice.call(document.querySelectorAll('#stars .star'));
     stars.forEach(function(s,i){ s.addEventListener('click',function(){ rating=i+1; stars.forEach(function(x,j){x.classList.toggle('on', j<rating);}); }); });
     var msg=document.getElementById('rmsg'); function show(k,txt){ msg.className='msg show '+k; msg.textContent=txt; }
@@ -300,144 +282,44 @@ h2{font-family:var(--display);font-size:20px;margin:26px 0 10px;font-weight:700;
     });
   }
 
-  // -------- auth screens --------
+  // -------- password gate --------
   var gate=document.getElementById('gate');
-  var screenChoice=document.getElementById('screenChoice');
-  var screenSignupForm=document.getElementById('screenSignupForm');
-  var screenSigninForm=document.getElementById('screenSigninForm');
-  var screenCode=document.getElementById('screenCode');
-  function showScreen(name){
-    gate.style.display='flex';
-    screenChoice.style.display = name==='choice' ? 'block':'none';
-    screenSignupForm.style.display = name==='signup' ? 'block':'none';
-    screenSigninForm.style.display = name==='signin' ? 'block':'none';
-    screenCode.style.display = name==='code' ? 'block':'none';
-  }
   function hideGate(){ gate.style.display='none'; }
-  function emailOk(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e); }
-  function allowedDomain(e){ var d=(e.split('@')[1]||'').toLowerCase(); return ALLOWED.indexOf(d)>=0; }
-  var pendingEmail='';
-
-  document.getElementById('choiceSignup').addEventListener('click', function(){ showScreen('signup'); });
-  document.getElementById('choiceSignin').addEventListener('click', function(){ showScreen('signin'); });
 
   (function(){
-    var msg=document.getElementById('suMsg'); function show(k,t){ msg.className='msg show '+k; msg.textContent=t; }
-    document.getElementById('suBack').addEventListener('click', function(){ showScreen('choice'); });
-    document.getElementById('suGo').addEventListener('click', async function(){
-      var email=document.getElementById('suEmail').value.trim();
-      var name=document.getElementById('suName').value.trim();
-      var code=document.getElementById('suCode').value;
-      var phone=document.getElementById('suPhone').value.trim();
-      if(document.getElementById('suHp').value) return;
-      if(!emailOk(email)) return show('err','Enter a valid email, e.g. you@gmail.com.');
-      if(!allowedDomain(email)) return show('err','Use a major email provider - Gmail, Outlook, Yahoo, iCloud, Proton, AOL, etc.');
-      if(name.length<2) return show('err','Enter your full name.');
-      if(!/^[0-9]{6,15}$/.test(phone)) return show('err','Enter your phone number - digits only, 6 to 15 of them.');
-      var btn=document.getElementById('suGo'); btn.disabled=true; btn.textContent='Checking email...';
-      pendingEmail=email; var fullPhone=code+' '+phone;
-      try{
-        var v=await sb.functions.invoke('verify-email', { body:{ email:email } });
-        if(v && v.data && v.data.ok===false){
-          btn.disabled=false; btn.textContent='Send me a code';
-          return show('err','That email address looks undeliverable. Double check it, or try a different one.');
-        }
-      }catch(e){ /* verification unavailable - proceed without blocking a real signup */ }
-      btn.textContent='Sending code...';
-      var res=await sb.auth.signInWithOtp({ email:email, options:{ shouldCreateUser:true, data:{ name:name, phone:fullPhone } } });
-      btn.disabled=false; btn.textContent='Send me a code';
-      if(res.error){ return show('err', res.error.message || 'Could not send the code. Try again.'); }
-      try{ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
-          body:JSON.stringify({access_key:WEB3KEY,subject:'New Freelance Guide signup',from_name:'Freelance Guide',name:name,email:email,phone:fullPhone,message:name+' signed up for the program.\nEmail: '+email+'\nPhone: '+fullPhone})});
-      }catch(e){}
-      cloudUser={ name:name, phone:fullPhone };
-      document.getElementById('codeToEmail').textContent=email;
-      showScreen('code'); startResendCooldown();
-    });
-  })();
-
-  (function(){
-    var msg=document.getElementById('siMsg'); function show(k,t){ msg.className='msg show '+k; msg.textContent=t; }
-    document.getElementById('siBack').addEventListener('click', function(){ showScreen('choice'); });
-    document.getElementById('siSwitch').addEventListener('click', function(){
-      document.getElementById('suEmail').value=document.getElementById('siEmail').value.trim();
-      showScreen('signup');
-    });
-    document.getElementById('siGo').addEventListener('click', async function(){
-      var email=document.getElementById('siEmail').value.trim();
-      document.getElementById('siSwitch').style.display='none';
-      if(!emailOk(email)) return show('err','Enter a valid email, e.g. you@gmail.com.');
-      var btn=document.getElementById('siGo'); btn.disabled=true; btn.textContent='Checking...';
-      pendingEmail=email;
-      var res=await sb.auth.signInWithOtp({ email:email, options:{ shouldCreateUser:false } });
-      btn.disabled=false; btn.textContent='Send me a code';
-      if(!res.error){
-        document.getElementById('codeToEmail').textContent=email;
-        showScreen('code'); startResendCooldown();
+    var msg=document.getElementById('pmsg');
+    function show(k,t){ msg.className='msg show '+k; msg.textContent=t; }
+    var inp=document.getElementById('pinput');
+    document.getElementById('pgo').addEventListener('click', function(){
+      if(inp.value===PASS){
+        try{localStorage.setItem('flg_auth','1');}catch(e){}
+        hideGate(); boot();
       } else {
-        var m=(res.error.message||'').toLowerCase();
-        if(m.indexOf('security purposes')>=0 || m.indexOf('seconds')>=0 || m.indexOf('rate')>=0){
-          return show('err','Please wait a moment and try again.');
-        }
-        show('err','No account found for that email.');
-        document.getElementById('siSwitch').style.display='block';
+        inp.value=''; inp.classList.add('bad');
+        setTimeout(function(){inp.classList.remove('bad');},360);
+        show('err','Wrong password. Try again.');
       }
     });
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('pgo').click();});
   })();
-
-  var resendTimer=null;
-  function startResendCooldown(){
-    var btn=document.getElementById('cresend'); var s=60; btn.disabled=true;
-    clearInterval(resendTimer);
-    function tick(){ btn.textContent='Resend code ('+s+'s)'; if(s<=0){ clearInterval(resendTimer); btn.disabled=false; btn.textContent='Resend code'; return;} s--; }
-    tick(); resendTimer=setInterval(tick,1000);
-  }
-  (function(){
-    var msg=document.getElementById('cmsg'); function show(k,t){ msg.className='msg show '+k; msg.textContent=t; }
-    document.getElementById('cback').addEventListener('click', function(){ showScreen('choice'); });
-    document.getElementById('cresend').addEventListener('click', async function(){
-      var btn=document.getElementById('cresend'); btn.disabled=true;
-      await sb.auth.signInWithOtp({ email:pendingEmail, options:{ shouldCreateUser:true } });
-      show('good','New code sent.'); startResendCooldown();
-    });
-    document.getElementById('cgo').addEventListener('click', async function(){
-      var code=document.getElementById('ccode').value.trim();
-      if(!/^[0-9]{4,8}$/.test(code)) return show('err','Enter the code from your email.');
-      var btn=document.getElementById('cgo'); btn.disabled=true; btn.textContent='Verifying...';
-      var res=await sb.auth.verifyOtp({ email:pendingEmail, token:code, type:'email' });
-      btn.disabled=false; btn.textContent='Verify & continue';
-      if(res.error){ return show('err', res.error.message || 'That code did not work. Try again or resend.'); }
-      applySession(res.data.session);
-    });
-  })();
-
-  function applySession(session){
-    var u=session.user, md=u.user_metadata||{};
-    cloudUser={ id:u.id, email:u.email, name:md.name||'', phone:md.phone||'' };
-    if(md.progress && typeof md.progress==='object'){ localProgress=md.progress; saveLocal(); }
-    hideGate(); boot();
-  }
-  async function tryAutoLogin(){
-    var r=await sb.auth.getSession();
-    if(r.data && r.data.session){ applySession(r.data.session); return true; }
-    return false;
-  }
 
   function boot(){
     app.style.display='block'; renderBar(); renderTopics();
     var target=null; for(var i=0;i<TOPICS.length;i++){ if(unlocked(i) && !topicPassed(TOPICS[i])){ target=i; break; } }
     if(target!==null){ openIdx=target; renderTopics(); }
   }
-  window.__logout=async function(){
-    if(!confirm('Log out? Your progress is saved to your account and will be there next time you log in.')) return;
-    try{ await sb.auth.signOut(); }catch(e){}
+  window.__logout=function(){
+    if(!confirm('Log out?')) return;
+    try{localStorage.removeItem('flg_auth');}catch(e){}
     location.reload();
   };
 
   wireReview();
-  (async function init(){
-    var already=await tryAutoLogin();
-    if(!already) showScreen('choice');
+  (function init(){
+    var already=false;
+    try{already=localStorage.getItem('flg_auth')==='1';}catch(e){}
+    if(already){ hideGate(); boot(); }
+    else{ gate.style.display='flex'; setTimeout(function(){try{document.getElementById('pinput').focus();}catch(e){}},30); }
   })();
 })();
 </script></body></html>
